@@ -257,7 +257,7 @@ function onXRFrame(frame) {
 }
 
 function onRequestSessionError(ex) {
-    alert("Failed to start immersive AR session.");
+    alert(ex.message);
     console.error(ex.message);
 }
 
