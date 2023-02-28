@@ -63,6 +63,7 @@
       btnArray.forEach((btn) => {
         let btnLabel = btn.id.replace('Btn', '')
         if (btnLabel === 'cam') {
+          btn.removeAttribute('hidden');
           return
         }
         if (currentLinks[btnLabel] !== undefined) {
