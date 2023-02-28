@@ -11,7 +11,7 @@
         let marker = this.el
         let sounds = Array.prototype.slice.call(
           document.querySelectorAll('[sound]'),
-        );
+        )
         let names = {
           escasez: 'Escasez Punk Rock',
           dw: 'Detective Wadd',
@@ -19,24 +19,20 @@
           sotano: 'El Sótano Fanzine',
           agente: 'Agente Extraño',
           coprofagia: 'Coprofagia',
-        };
+        }
 
         marker.addEventListener('markerFound', function () {
+          let links = document.getElementById('links').value
+          let b = window.parent.document.getElementsByTagName('body')[0]
+          let currentLinks = links[marker.id]
+          let buttons = Array.prototype.slice.call(
+            b.getElementsByTagName('button'),
+          )
+          let info = b.getElementsByClassName('info')[0]
+          info.setAttribute('hidden', 'true')
 
-          if (marker.id != currentMarker) {
-            let links = document.getElementById('links').value
-            let b = window.parent.document.getElementsByTagName('body')[0]
-            let currentLinks = links[marker.id]
-            let buttons = Array.prototype.slice.call(
-              b.getElementsByTagName('button'),
-            )
-            let info = b.getElementsByClassName('info')[0];
-            info.setAttribute('hidden', 'true');
-
-            
-            currentMarker = marker.id
-            processButtons(buttons, currentLinks, marker.id, names)
-          }
+          currentMarker = marker.id
+          processButtons(buttons, currentLinks, marker.id, names)
 
           const entityTag = `#${marker.id}`
           let sound =
@@ -62,8 +58,8 @@
     })
 
     function processButtons(btnArray, currentLinks, marker, names) {
-      let b = window.parent.document.getElementsByTagName('body')[0];
-      (b.getElementsByClassName('legendText')[0]).textContent = names[marker];
+      let b = window.parent.document.getElementsByTagName('body')[0]
+      b.getElementsByClassName('legendText')[0].textContent = names[marker]
       btnArray.forEach((btn) => {
         let btnLabel = btn.id.replace('Btn', '')
         if (btnLabel === 'cam') {
@@ -96,7 +92,10 @@
         <a-asset-item id="procesx" src="models/procesx.gltf"></a-asset-item>
         <a-asset-item id="sotano" src="models/sotano.gltf"></a-asset-item>
         <a-asset-item id="agente" src="models/agente.gltf"></a-asset-item>
-        <a-asset-item id="coprofagia" src="models/coprofagia.gltf"></a-asset-item>
+        <a-asset-item
+          id="coprofagia"
+          src="models/coprofagia.gltf"
+        ></a-asset-item>
         <audio
           id="agenteAudio"
           src="audio/inanicion.mp3"
