@@ -1,53 +1,143 @@
 <!DOCTYPE html>
 <html>
-  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
   <script src="js/aframe.min.js"></script>
   <script src="js/aframe-ar.js"></script>
   <script src="js/aframe-particle-system-component.js"></script>
 
-  <style>
-    .btn {
-      z-index: 9999 !important;
-    }
-  </style>
-
   <script>
-    AFRAME.registerComponent('soundhandler', {
-      tick: function () {
-        var entity = document.querySelector('[sound]')
-        if (document.querySelector('a-marker').object3D.visible == true) {
-          entity.components.sound.playSound()
-        } else {
-          entity.components.sound.pauseSound()
-        }
+    AFRAME.registerComponent('registerevents', {
+      init: function () {
+        let currentMarker = ''
+        let marker = this.el
+        let sounds = Array.prototype.slice.call(
+          document.querySelectorAll('[sound]'),
+        );
+        let names = {
+          escasez: 'Escasez Punk Rock',
+          dw: 'Detective Wadd',
+          procesx: 'Procesx Punk Medallo',
+          sotano: 'El Sótano Fanzine',
+          agente: 'Agente Extraño',
+          coprofagia: 'Coprofagia',
+        };
+
+        marker.addEventListener('markerFound', function () {
+
+          if (marker.id != currentMarker) {
+            let links = document.getElementById('links').value
+            let b = window.parent.document.getElementsByTagName('body')[0]
+            let currentLinks = links[marker.id]
+            let buttons = Array.prototype.slice.call(
+              b.getElementsByTagName('button'),
+            )
+            let info = b.getElementsByClassName('info')[0];
+            info.setAttribute('hidden', 'true');
+
+            
+            currentMarker = marker.id
+            processButtons(buttons, currentLinks, marker.id, names)
+          }
+
+          const entityTag = `#${marker.id}`
+          let sound =
+            Array.isArray(sounds) &&
+            sounds.filter(
+              (s) => s.components['gltf-model'].attrValue === entityTag,
+            )[0]
+          sound.components.sound.playSound()
+        })
+
+        marker.addEventListener('markerLost', function () {
+          console.log(marker.id)
+          const entityTag = `#${marker.id}`
+          console.log(Array.isArray(sounds))
+          let sound =
+            Array.isArray(sounds) &&
+            sounds.filter(
+              (s) => s.components['gltf-model'].attrValue === entityTag,
+            )[0]
+          sound.components.sound.stopSound()
+        })
       },
     })
+
+    function processButtons(btnArray, currentLinks, marker, names) {
+      let b = window.parent.document.getElementsByTagName('body')[0];
+      console.log(b);
+      (b.getElementsByClassName('legendText')[0]).textContent = names[marker];
+      btnArray.forEach((btn) => {
+        let btnLabel = btn.id.replace('Btn', '')
+        if (btnLabel === 'cam') {
+          return
+        }
+        if (currentLinks[btnLabel] !== undefined) {
+          btn.removeAttribute('hidden')
+          btn.setAttribute(
+            'onclick',
+            `location.href='${currentLinks[btnLabel]}';`,
+          )
+        } else {
+          btn.removeAttribute('href')
+          btn.setAttribute('hidden', 'true')
+        }
+      })
+    }
   </script>
 
   <body style="margin: 0px; overflow: hidden;">
+    <span id="links" hidden></span>
     <a-scene
       embedded
       vr-mode-ui="enabled: false;"
       arjs="debugUIEnabled: false;"
     >
       <a-assets>
-        <a-asset-item id="escasez" src="models/Escasez.gltf"></a-asset-item>
+        <a-asset-item id="escasez" src="models/escasez.gltf"></a-asset-item>
+        <a-asset-item id="dw" src="models/dw.gltf"></a-asset-item>
+        <a-asset-item id="procesx" src="models/procesx.gltf"></a-asset-item>
+        <a-asset-item id="sotano" src="models/sotano.gltf"></a-asset-item>
+        <a-asset-item id="agente" src="models/agente.gltf"></a-asset-item>
+        <a-asset-item id="coprofagia" src="models/coprofagia.gltf"></a-asset-item>
+        <audio
+          id="agenteAudio"
+          src="audio/inanicion.mp3"
+          preload="auto"
+        ></audio>
         <audio
           id="escasezAudio"
           src="audio/sinParar.mp3"
           preload="auto"
         ></audio>
+        <audio
+          id="dwAudio"
+          src="audio/bandaDeHampones.mp3"
+          preload="auto"
+        ></audio>
+        <audio
+          id="procesxAudio"
+          src="audio/tierraDeLosSapos.mp3"
+          preload="auto"
+        ></audio>
+        <audio
+          id="sotanoAudio"
+          src="audio/portatuSkulls.mp3"
+          preload="auto"
+        ></audio>
+        <audio
+          id="coprofagiaAudio"
+          src="audio/brutalDemencia.mp3"
+          preload="auto"
+        ></audio>
       </a-assets>
 
-      <a-marker type="pattern" url="data/escasez.patt">
-        <a-box
-          position="0 0 0"
-          scale="0.01 0.01 0.01"
-          material="color: black;"
-          soundhandler
-        ></a-box>
+      <a-marker
+        id="escasez"
+        type="pattern"
+        url="data/escasez.patt"
+        registerevents
+      >
         <a-entity
-          position="0 0 0"
+          position="0 -1 0"
           particle-system="
             texture: images/particles/skull.png;
             color: #000000, #FFFFFF; 
@@ -67,10 +157,160 @@
           scale="0.025 0.025 0.025"
           gltf-model="#escasez"
           animation="property: scale; to: 0.05 0.05 0.05; loop: true; dur: 5000"
-          sound="src: #escasezAudio; autoplay: true; loop: true"
-        >
-        </a-entity>
+          sound="src: #escasezAudio; autoplay: false; loop: false"
+        ></a-entity>
       </a-marker>
+
+      <a-marker id="dw" type="pattern" url="data/dw.patt" registerevents>
+        <a-entity
+          position="0 0 0"
+          particle-system="
+            texture: images/particles/dw.png;
+            color: #000000, #FFFFFF; 
+            size: 1, 0;
+            velocityValue: 0.007 0.005 0.003;
+            velocitySpread: 0.7 0 0.3; 
+            accelerationValue: 0.003 0.005 0.007;
+            accelerationSpread: 0.005 0.005 0.005;
+            rotationAngle: 0; 
+            blending: 1;
+            particleCount: 200;
+            maxAge: 5;"
+        ></a-entity>
+        <a-entity
+          position="0 0 0"
+          rotation="0 0 0"
+          scale="0.025 0.025 0.025"
+          gltf-model="#dw"
+          animation="property: scale; to: 0.05 0.05 0.05; loop: true; dur: 5000"
+          sound="src: #dwAudio; autoplay: false; loop: false"
+        ></a-entity>
+      </a-marker>
+
+      <a-marker
+        id="procesx"
+        type="pattern"
+        url="data/procesx.patt"
+        registerevents
+      >
+        <a-entity
+          position="0 0 0"
+          particle-system="
+            texture: images/particles/procesx.png;
+            color: #000000, #FFFFFF; 
+            size: 1, 0;
+            velocityValue: 0.007 0.005 0.003;
+            velocitySpread: 0.7 0 0.3; 
+            accelerationValue: 0.003 0.005 0.007;
+            accelerationSpread: 0.005 0.005 0.005;
+            rotationAngle: 0; 
+            blending: 1;
+            particleCount: 200;
+            maxAge: 5;"
+        ></a-entity>
+        <a-entity
+          position="0 0 0"
+          rotation="0 0 0"
+          scale="0.15 0.15 0.15"
+          gltf-model="#procesx"
+          animation="property: rotation; to: 0 45 0; loop: true; dur: 1000"
+          sound="src: #procesxAudio; autoplay: false; loop: false"
+        ></a-entity>
+      </a-marker>
+
+      <a-marker
+        id="sotano"
+        type="pattern"
+        url="data/sotano.patt"
+        registerevents
+      >
+        <a-entity
+          position="0 0 0"
+          particle-system="
+            texture: images/particles/sotano.png;
+            color: #000000, #FFFFFF; 
+            size: 1, 0;
+            velocityValue: 0.007 0.005 0.003;
+            velocitySpread: 0.7 0 0.3; 
+            accelerationValue: 0.003 0.005 0.007;
+            accelerationSpread: 0.005 0.005 0.005;
+            rotationAngle: 0; 
+            blending: 1;
+            particleCount: 200;
+            maxAge: 5;"
+        ></a-entity>
+        <a-entity
+          position="0 0 0"
+          rotation="0 0 0"
+          scale="0.10 0.10 0.10"
+          gltf-model="#sotano"
+          animation="property: rotation; to: 0 10 0; loop: true; dur: 1000"
+          sound="src: #sotanoAudio; autoplay: false; loop: false"
+        ></a-entity>
+      </a-marker>
+
+      <a-marker
+        id="agente"
+        type="pattern"
+        url="data/agente.patt"
+        registerevents
+      >
+        <a-entity
+          position="0 0 0"
+          particle-system="
+            texture: images/particles/agente.png;
+            color: #000000, #FFFFFF; 
+            size: 1, 0;
+            velocityValue: 0.007 0.005 0.003;
+            velocitySpread: 0.7 0 0.3; 
+            accelerationValue: 0.003 0.005 0.007;
+            accelerationSpread: 0.005 0.005 0.005;
+            rotationAngle: 0; 
+            blending: 1;
+            particleCount: 200;
+            maxAge: 5;"
+        ></a-entity>
+        <a-entity
+          position="0 1 0"
+          rotation="0 0 0"
+          scale="0.05 0.05 0.05"
+          gltf-model="#agente"
+          animation="property: rotation; to: 0 -360 0; loop: true; dur: 2500"
+          sound="src: #agenteAudio; autoplay: false; loop: false"
+        ></a-entity>
+      </a-marker>
+
+      <a-marker
+        id="coprofagia"
+        type="pattern"
+        url="data/coprofagia.patt"
+        registerevents
+      >
+        <a-entity
+          position="0 -1 0"
+          particle-system="
+            texture: images/particles/coprofagia.png;
+            color: #000000, #FFFFFF; 
+            size: 1, 0;
+            velocityValue: 0.005 0.005 0.005;
+            velocitySpread: 0.5 0 0.5; 
+            accelerationValue: 0.005 0.005 0.005;
+            accelerationSpread: 0.005 0.005 0.005;
+            rotationAngle: 0; 
+            blending: 1;
+            particleCount: 200;
+            maxAge: 5; "
+        ></a-entity>
+        <a-entity
+          position="0 0 0"
+          rotation="0 0 0"
+          scale="14 14 14"
+          gltf-model="#coprofagia"
+          animation="property: rotation; from:0 360 0; to:0 -360 0; loop: true; dur: 5000"
+          sound="src: #coprofagiaAudio; autoplay: false; loop: false"
+        ></a-entity>
+      </a-marker>
+
       <a-entity camera></a-entity>
     </a-scene>
   </body>
