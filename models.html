@@ -63,7 +63,6 @@
 
     function processButtons(btnArray, currentLinks, marker, names) {
       let b = window.parent.document.getElementsByTagName('body')[0];
-      console.log(b);
       (b.getElementsByClassName('legendText')[0]).textContent = names[marker];
       btnArray.forEach((btn) => {
         let btnLabel = btn.id.replace('Btn', '')
