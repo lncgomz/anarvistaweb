@@ -4,9 +4,11 @@
   <script src="js/aframe-ar.js"></script>
   <script src="js/aframe-particle-system-component.js"></script>
   <script src="customJs/control.js"></script>
+  <link rel="stylesheet" href="css/spinner.css" />
 
   <body style="margin: 0px; overflow: hidden;">
     <span id="links" hidden></span>
+    <div class="spinner hidden"></div>
     <a-scene
       embedded
       vr-mode-ui="enabled: false;"
@@ -19,10 +21,9 @@
         <a-asset-item id="sotano" src="models/sotano.gltf"></a-asset-item>
         <a-asset-item id="agente" src="models/agente.gltf"></a-asset-item>
         <a-asset-item id="fango" src="models/fango.gltf"></a-asset-item>
-        <a-asset-item
-          id="coprofagia"
-          src="models/coprofagia.gltf"
-        ></a-asset-item>
+        <a-asset-item id="proxtatikoz" src="models/proxtatikoz.gltf"></a-asset-item>
+        <a-asset-item id="barhaus" src="models/barhaus.gltf"></a-asset-item>
+        <a-asset-item id="coprofagia" src="models/coprofagia.gltf"></a-asset-item>
         <audio
           id="agenteAudio"
           src="audio/inanicion.mp3"
@@ -53,9 +54,15 @@
           src="audio/brutalDemencia.mp3"
           preload="auto"
         ></audio>
+        <audio id="fangoAudio" src="audio/ninoPijo.mp3" preload="auto"></audio>
         <audio
-          id="fangoAudio"
-          src="audio/ninoPijo.mp3"
+          id="proxtatikozAudio"
+          src="audio/tactoRectal.mp3"
+          preload="auto"
+        ></audio>
+        <audio
+          id="barhausAudio"
+          src="audio/punk.mp3"
           preload="auto"
         ></audio>
       </a-assets>
@@ -241,12 +248,7 @@
         ></a-entity>
       </a-marker>
 
-      <a-marker
-        id="fango"
-        type="pattern"
-        url="data/fango.patt"
-        registerevents
-      >
+      <a-marker id="fango" type="pattern" url="data/fango.patt" registerevents>
         <a-entity
           position="0 -1 0"
           particle-system="
@@ -269,6 +271,68 @@
           gltf-model="#fango"
           animation="property: scale; from:0.05 0.05 0.05; to:0.1 0.1 0.1; loop: true; dur: 5000"
           sound="src: #fangoAudio; autoplay: false; loop: false"
+        ></a-entity>
+      </a-marker>
+
+      <a-marker
+        id="proxtatikoz"
+        type="pattern"
+        url="data/proxtatikoz.patt"
+        registerevents
+      >
+        <a-entity
+          position="0 -1 0"
+          particle-system="
+            texture: images/particles/proxtatikoz.png;
+            color: #000000, #FFFFFF; 
+            size: 1, 0;
+            velocityValue: 0.007 0.005 0.003;
+            velocitySpread: 0.7 0 0.3; 
+            accelerationValue: 0.003 0.005 0.007;
+            accelerationSpread: 0.005 0.005 0.005;
+            rotationAngle: 0; 
+            blending: 1;
+            particleCount: 200;
+            maxAge: 5;"
+        ></a-entity>
+        <a-entity
+          position="0 0 0"
+          rotation="0 0 0"
+          scale="0.6 0.6 0.6"
+          gltf-model="#proxtatikoz"
+          animation="property: rotation; from: 0 0 0; to: 0 0 360; loop: true; dur: 1000"
+          sound="src: #proxtatikozAudio; autoplay: false; loop: false"
+        ></a-entity>
+      </a-marker>
+
+      <a-marker
+        id="barhaus"
+        type="pattern"
+        url="data/barhaus.patt"
+        registerevents
+      >
+        <a-entity
+          position="0 -1 0"
+          particle-system="
+            texture: images/particles/anarchy.png;
+            color: #000000, #FFFFFF; 
+            size: 1, 0;
+            velocityValue: 0.007 0.005 0.003;
+            velocitySpread: 0.7 0 0.3; 
+            accelerationValue: 0.003 0.005 0.007;
+            accelerationSpread: 0.005 0.005 0.005;
+            rotationAngle: 0; 
+            blending: 1;
+            particleCount: 200;
+            maxAge: 5;"
+        ></a-entity>
+        <a-entity
+          position="0 0 0"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+          gltf-model="#barhaus"
+          animation="property: rotation; from: 0 0 0; to: 0 0 360; loop: true; dur: 1000"
+          sound="src: #barhausAudio; autoplay: false; loop: false"
         ></a-entity>
       </a-marker>
 

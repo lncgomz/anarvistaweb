@@ -12,7 +12,9 @@ AFRAME.registerComponent('registerevents', {
         sotano: 'El Sótano Fanzine',
         agente: 'Agente Extraño',
         coprofagia: 'Coprofagia',
-        fango: 'Fango'
+        fango: 'Fango',
+        proxtatikoz: 'Proxtatikoz',
+        barhaus: 'Barhaus'
       }
 
       marker.addEventListener('markerFound', function () {
@@ -38,9 +40,9 @@ AFRAME.registerComponent('registerevents', {
       })
 
       marker.addEventListener('markerLost', function () {
-        console.log(marker.id)
         const entityTag = `#${marker.id}`
-        console.log(Array.isArray(sounds))
+        let b = window.parent.document.getElementsByTagName('body')[0]
+        b.getElementsByClassName('legendText')[0].textContent = ""
         let sound =
           Array.isArray(sounds) &&
           sounds.filter(
@@ -72,3 +74,17 @@ AFRAME.registerComponent('registerevents', {
       }
     })
   }
+
+  var scene = document.querySelector('a-scene');
+  debugger;
+
+if (scene && scene.hasLoaded) {
+  run();
+} else {
+  console.log('loading');
+  scene.addEventListener('loaded', run);
+}
+
+function run () {
+  console.log('LOADED');
+}
