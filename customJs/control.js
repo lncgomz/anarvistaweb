@@ -74,17 +74,3 @@ AFRAME.registerComponent('registerevents', {
       }
     })
   }
-
-  var scene = document.querySelector('a-scene');
-  debugger;
-
-if (scene && scene.hasLoaded) {
-  run();
-} else {
-  console.log('loading');
-  scene.addEventListener('loaded', run);
-}
-
-function run () {
-  console.log('LOADED');
-}

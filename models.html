@@ -8,9 +8,10 @@
 
   <body style="margin: 0px; overflow: hidden;">
     <span id="links" hidden></span>
-    <div class="spinner hidden"></div>
+    <div id="spinner" class="spinner center hidden"></div>
     <a-scene
       embedded
+      scene-controller
       vr-mode-ui="enabled: false;"
       arjs="debugUIEnabled: false;"
     >
@@ -298,7 +299,7 @@
         <a-entity
           position="0 0 0"
           rotation="0 0 0"
-          scale="0.6 0.6 0.6"
+          scale="0.7 0.7 0.7"
           gltf-model="#proxtatikoz"
           animation="property: rotation; from: 0 0 0; to: 0 0 360; loop: true; dur: 1000"
           sound="src: #proxtatikozAudio; autoplay: false; loop: false"
