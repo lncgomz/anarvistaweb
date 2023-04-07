@@ -14,7 +14,8 @@ AFRAME.registerComponent('registerevents', {
         coprofagia: 'Coprofagia',
         fango: 'Fango',
         proxtatikoz: 'Proxtatikoz',
-        barhaus: 'Barhaus'
+        barhaus: 'Barhaus',
+        som: "Solución o Muerte TPHC"
       }
 
       marker.addEventListener('markerFound', function () {

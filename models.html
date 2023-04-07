@@ -25,6 +25,7 @@
         <a-asset-item id="proxtatikoz" src="models/proxtatikoz.gltf"></a-asset-item>
         <a-asset-item id="barhaus" src="models/barhaus.gltf"></a-asset-item>
         <a-asset-item id="coprofagia" src="models/coprofagia.gltf"></a-asset-item>
+        <a-asset-item id="som" src="models/som.gltf"></a-asset-item>
         <audio
           id="agenteAudio"
           src="audio/inanicion.mp3"
@@ -64,6 +65,11 @@
         <audio
           id="barhausAudio"
           src="audio/punk.mp3"
+          preload="auto"
+        ></audio>
+        <audio
+          id="somAudio"
+          src="audio/tombosHP.mp3"
           preload="auto"
         ></audio>
       </a-assets>
@@ -334,6 +340,37 @@
           gltf-model="#barhaus"
           animation="property: rotation; from: 0 0 0; to: 0 0 360; loop: true; dur: 1000"
           sound="src: #barhausAudio; autoplay: false; loop: false"
+        ></a-entity>
+      </a-marker>
+
+      <a-marker
+        id="som"
+        type="pattern"
+        url="data/som.patt"
+        registerevents
+      >
+        <a-entity
+          position="0 -1 0"
+          particle-system="
+            texture: images/particles/som.png;
+            color: #000000, #FFFFFF; 
+            size: 2, 0;
+            velocityValue: 0.007 0.005 0.003;
+            velocitySpread: 0.7 0 0.3; 
+            accelerationValue: 0.003 0.005 0.007;
+            accelerationSpread: 0.005 0.005 0.005;
+            rotationAngle: 0; 
+            blending: 1;
+            particleCount: 200;
+            maxAge: 5;"
+        ></a-entity>
+        <a-entity
+          position="0 0 0"
+          rotation="0 0 0"
+          scale="0.4 0.4 0.4"
+          gltf-model="#som"
+          animation="property: rotation; from: 0 0 0; to: 0 0 360; loop: true; dur: 1000"
+          sound="src: #somAudio; autoplay: false; loop: false"
         ></a-entity>
       </a-marker>
 
