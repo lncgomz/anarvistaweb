@@ -14,8 +14,25 @@ AFRAME.registerComponent('registerevents', {
         coprofagia: 'Coprofagia',
         fango: 'Fango',
         proxtatikoz: 'Proxtatikoz',
-        barhaus: 'Barhaus',
-        som: "Solución o Muerte TPHC"
+        som: 'Solución o Muerte TPHC',
+        mayoria: 'Mayoría Equivocada',
+        desquiciadamente: 'Desquiciada-Mente',
+        anarvista: 'AnARvista'
+      }
+
+      let songs = {
+        escasez: 'Escasez Punk Rock - Sin Parar',
+        dw: 'Detective Wadd - Banda de Hampones',
+        procesx: 'Procesx Punk Medallo - Tierra de los Sapos',
+        sotano: 'Portatu - Skulls',
+        agente: 'Agente Extraño - Inanición',
+        coprofagia: 'Coprofagia - Brutal Demencia',
+        fango: 'Fango - Niño Pijo',
+        proxtatikoz: 'Proxtatikoz - Tacto Rectal',
+        som: 'Solución o Muerte TPHC - Tombos HP',
+        mayoria: 'Autopsia - Mayoría Equivocada',
+        desquiciadamente: 'HoliznaCC0 - Punk',
+        anarvista: '@Patia No - Hazlo Tu Mismo'
       }
 
       marker.addEventListener('markerFound', function () {
@@ -29,7 +46,7 @@ AFRAME.registerComponent('registerevents', {
         info.setAttribute('hidden', 'true')
 
         currentMarker = marker.id
-        processButtons(buttons, currentLinks, marker.id, names)
+        processButtons(buttons, currentLinks, marker.id, names, songs)
 
         const entityTag = `#${marker.id}`
         let sound =
@@ -41,9 +58,11 @@ AFRAME.registerComponent('registerevents', {
       })
 
       marker.addEventListener('markerLost', function () {
+        debugger
         const entityTag = `#${marker.id}`
         let b = window.parent.document.getElementsByTagName('body')[0]
         b.getElementsByClassName('legendText')[0].textContent = ""
+        b.getElementsByClassName('songText')[0].textContent = ""
         let sound =
           Array.isArray(sounds) &&
           sounds.filter(
@@ -54,9 +73,10 @@ AFRAME.registerComponent('registerevents', {
     },
   })
 
-  function processButtons(btnArray, currentLinks, marker, names) {
+  function processButtons(btnArray, currentLinks, marker, names, songs  ) {
     let b = window.parent.document.getElementsByTagName('body')[0]
     b.getElementsByClassName('legendText')[0].textContent = names[marker]
+    b.getElementsByClassName('songText')[0].textContent = songs[marker]
     btnArray.forEach((btn) => {
       let btnLabel = btn.id.replace('Btn', '')
       if (btnLabel === 'cam') {
