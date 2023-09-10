@@ -4877,7 +4877,7 @@ ARjs.MarkersAreaUtils.storeDefaultMultiMarkerFile = function(trackingBackend){
  */
 ARjs.MarkersAreaUtils.createDefaultMultiMarkerFile = function(trackingBackend){
 	console.assert(trackingBackend)
-	if( trackingBackend === undefined )	debugger
+	if( trackingBackend === undefined )
 	
 	// create absoluteBaseURL
 	var link = document.createElement('a')

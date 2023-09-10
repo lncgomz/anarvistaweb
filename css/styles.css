@@ -1,8 +1,3 @@
-@font-face {
-  font-family: "PunkType";
-  src: url("../fonts/Punktype.ttf") format("truetype");
-}
-
 html,
 body {
   overflow: hidden;
@@ -76,25 +71,39 @@ button:active {
   flex-wrap: nowrap;
 }
 
-header {
-  flex-shrink: 0;
+.cols {
+  display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
 }
 
-iframe {
-  margin-bottom: 3px;
-  border: 0;
-  width: 100%;
-  height: 83%;
-}
-
-.frame {
-  flex-grow: 1;
-  overflow: auto;
-  min-height: 2em;
+.cols div {
+  align-content: center;
 }
 
 footer {
-  flex-shrink: 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+
+  .centerGroup{
+    background-color: white;
+    color: black;
+    font-size: 2em;
+  }
+}
+
+.msg {
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .logo img {
@@ -102,17 +111,4 @@ footer {
   height: 200px;
 }
 
-.msg p {
-  font-family: "PunkType";
-  color: white;
-}
 
-.mainMsg {
-  font-size: 22px;
-  margin-top: 3px;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-}

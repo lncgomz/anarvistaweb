@@ -1,0 +1,52 @@
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  margin-bottom: 1;
+  text-align: center;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+button {
+  -moz-box-shadow: 0px 0px 32px 8px #080808;
+  -webkit-box-shadow: 0px 0px 32px 8px #080808;
+  box-shadow: 0px 0px 32px 8px #080808;
+  background-color: #000000;
+  -webkit-border-radius: 50px !important;
+  -moz-border-radius: 50px !important;
+  border-radius: 50px !important;
+  border: 3px solid #ffffff;
+  cursor: pointer !important;
+  color: #ffffff !important;
+  font-size: 20px !important;
+  padding: 9px 16px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #878787 !important;
+}
+
+.legendGroup {
+  background-color: white !important;
+  color: black !important;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.legendText, .songText {
+  width: 50%;
+}
+
+.ctrlBtn {
+  color:black;
+}

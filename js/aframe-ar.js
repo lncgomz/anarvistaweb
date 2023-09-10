@@ -1007,7 +1007,7 @@ var Qb=[Ik,Zh,_h,Qj,Qi,Pi,Ri,Ag,sg,qg,rg,yg,kh,jh,Oi,Mj];var Rb=[Jk,ki,ji,gi];va
 		// 	this.ctx.drawImage(image, 0, 0, this.canvas.height, this.canvas.width); // draw video
 		// 	this.ctx.restore();
 		// } else {
-		// 	debugger
+		// 	
 		// 	this.ctx.drawImage(image, 0, 0, this.canvas.width, this.canvas.height); // draw video
 		// }
 
@@ -1559,7 +1559,7 @@ var Qb=[Ik,Zh,_h,Qj,Qi,Pi,Ri,Ag,sg,qg,rg,yg,kh,jh,Oi,Mj];var Rb=[Jk,ki,ji,gi];va
 				// FIXME super kludge - remove it
 				// console.assert(file !== '')
 				if( file === 'patt.hiro' || file === 'patt.kanji' || file === 'patt2.hiro' || file === 'patt2.kanji' ){
-					// debugger
+					// 
 					return ['http://127.0.0.1:8080/data/data/' + file, file]
 				}
 				return [path + '/' + file, file]
@@ -2266,7 +2266,7 @@ THREEx.ArMarkerHelper = function(markerControls){
 	this.object3d.add(mesh)
 
 	var text = markerControls.id
-	// debugger
+	// 
 	// var text = markerControls.parameters.patternUrl.slice(-1).toUpperCase();
 
 	var canvas = document.createElement( 'canvas' );
@@ -4678,7 +4678,7 @@ ARjs.MarkersAreaLearning.prototype.computeResult = function(){
 		// console.log('loop')
 	}while(resultChanged === true)
 	
-	// debugger
+	// 
 	// console.log('json:', this.toJSON())
 	// this.subMarkersControls.forEach(function(subMarkerControls){
 	// 	var hasResult = subMarkerControls.object3d.userData.result !== undefined
@@ -4877,7 +4877,7 @@ ARjs.MarkersAreaUtils.storeDefaultMultiMarkerFile = function(trackingBackend){
  */
 ARjs.MarkersAreaUtils.createDefaultMultiMarkerFile = function(trackingBackend){
 	console.assert(trackingBackend)
-	if( trackingBackend === undefined )	debugger
+	if( trackingBackend === undefined )	
 	
 	// create absoluteBaseURL
 	var link = document.createElement('a')

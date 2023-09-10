@@ -1,56 +1,82 @@
 {
-    "escasez": {
-      "facebook": "https://www.facebook.com/EscasezPunk/",
-      "instagram": "https://www.instagram.com/escasezpunk/",
-      "youtube": "https://www.youtube.com/@escasezpunkrock1294"
-    },
-    "dw": {
-      "bandcamp": "https://detectivewadd.bandcamp.com/",
-      "facebook": "https://www.facebook.com/detectivewadd/",
-      "instagram": "https://www.instagram.com/detectivewadd/",
-      "youtube": "https://www.youtube.com/@DetectiveWadd"
-    },
-    "procesx": {
-      "facebook": "https://www.facebook.com/people/PROCESX/100063111314770/",
-      "instagram": "https://www.instagram.com/procesx_punkrock/",
-      "youtube": "https://www.youtube.com/@procesxpunkmedallo"
-    },
-    "sotano": {
-      "archive": "https://archive.org/details/@el_s_tano_fanzine",
-      "facebook": "https://www.facebook.com/elsotanofanzine/",
-      "instagram": "https://www.instagram.com/elsotanofanzine/"
-    },
-    "agente": {
-      "bandcamp": "https://agenteextra.bandcamp.com/",
-      "facebook": "https://www.facebook.com/people/Agente-Extra%C3%B1o/100059036357583/",
-      "instagram": "https://www.instagram.com/agentextrano/",
-      "youtube": "https://www.youtube.com/@agentextrano"
-    },
-    "coprofagia": {
-      "facebook": "https://www.facebook.com/profile.php?id=100069705594144",
-      "youtube": "https://www.youtube.com/@coprofagiapunk4278"
-    },
-    "fango": {
-      "facebook": "https://www.facebook.com/fangopunkrock",
-      "instagram": "https://www.instagram.com/fangopunkrock/",
-      "youtube": "https://www.youtube.com/@fangopunkrock3775"
-    },
-    "proxtatikoz": {
-      "facebook": "https://www.facebook.com/proxtatikoz.medallo",
-      "instagram": "https://www.instagram.com/proxtatikoz/",
-      "youtube": "https://www.youtube.com/@proxtatikoz1445"
-    },
-    "som": {
-      "youtube": "https://www.youtube.com/@sxoxm3782"
-    },
-    "mayoria": {
-      "instagram": "https://www.instagram.com/mayoriaequivocada/"
-    },
-    "desquiciadamente": {
-      "instagram": "https://www.instagram.com/desquiciadamente/"
-    },
-    "anarvista": {
-      "instagram": "https://www.instagram.com/anarvista/"
-    }
+  "escasez": {
+    "facebook": "https://www.facebook.com/EscasezPunk/",
+    "instagram": "https://www.instagram.com/escasezpunk/",
+    "youtube": "https://www.youtube.com/@escasezpunkrock1294"
+  },
+  "dw": {
+    "bandcamp": "https://detectivewadd.bandcamp.com/",
+    "facebook": "https://www.facebook.com/detectivewadd/",
+    "instagram": "https://www.instagram.com/detectivewadd/",
+    "youtube": "https://www.youtube.com/@DetectiveWadd"
+  },
+  "procesx": {
+    "facebook": "https://www.facebook.com/people/PROCESX/100063111314770/",
+    "instagram": "https://www.instagram.com/procesx_punkrock/",
+    "youtube": "https://www.youtube.com/@procesxpunkmedallo"
+  },
+  "sotano": {
+    "archive": "https://archive.org/details/@el_s_tano_fanzine",
+    "facebook": "https://www.facebook.com/elsotanofanzine/",
+    "instagram": "https://www.instagram.com/elsotanofanzine/"
+  },
+  "agente": {
+    "bandcamp": "https://agenteextra.bandcamp.com/",
+    "facebook": "https://www.facebook.com/people/Agente-Extra%C3%B1o/100059036357583/",
+    "instagram": "https://www.instagram.com/agentextrano/",
+    "youtube": "https://www.youtube.com/@agentextrano"
+  },
+  "coprofagia": {
+    "facebook": "https://www.facebook.com/profile.php?id=100069705594144",
+    "youtube": "https://www.youtube.com/@coprofagiapunk4278"
+  },
+  "fango": {
+    "facebook": "https://www.facebook.com/fangopunkrock",
+    "instagram": "https://www.instagram.com/fangopunkrock/",
+    "youtube": "https://www.youtube.com/@fangopunkrock3775"
+  },
+  "proxtatikoz": {
+    "facebook": "https://www.facebook.com/proxtatikoz.medallo",
+    "instagram": "https://www.instagram.com/proxtatikoz/",
+    "youtube": "https://www.youtube.com/@proxtatikoz1445"
+  },
+  "som": {
+    "youtube": "https://www.youtube.com/@sxoxm3782",
+    "facebook": "https://www.facebook.com/sxoxmpunkhc/"
+  },
+  "mayoria": {
+    "instagram": "https://www.instagram.com/mayoriaequivocada/"
+  },
+  "desquiciadamente": {
+    "instagram": "https://www.instagram.com/desquiciadamente/"
+  },
+  "anarvista": {
+    "instagram": "https://www.instagram.com/anarvista/",
+    "facebook": "https://www.facebook.com/Anarvista",
+    "archive": "https://docs.google.com/file/d/0B14Synwe1mHzYzFMb2pGZFFjdnM/edit?pli=1&resourcekey=0-7Ub7khPGaC6410LZaYTbSw"
+  },
+  "med": {
+    "instagram": "https://www.instagram.com/mentesendisturbio/",
+    "facebook": "https://www.facebook.com/mentesendisturbio",
+    "youtube": "https://www.youtube.com/@mentesendisturbio",
+    "web": "https://www.mentesendisturbio.com/"
+  },
+  "caminata": {
+    "instagram": "https://www.instagram.com/caminataspunk/",
+    "facebook": "https://www.facebook.com/profile.php?id=100030897747009"
+  },
+  "odio": {
+    "instagram": "https://www.instagram.com/odio.hc/",
+    "facebook": "https://www.facebook.com/O.D.I.O.HCPunk",
+    "youtube": "https://www.youtube.com/@ODIOPunkCore",
+    "bandcamp": "https://odio.bandcamp.com/",
+    "spotify": "https://open.spotify.com/artist/1pYA1wAYbl8ci0vjExv9Y9?si=hgaeNNneTKmDIiXzYj0MQw",
+    "threads": "https://www.threads.net/@odio.hc"
+  },
+  "perrera": {
+    "instagram": "https://www.instagram.com/laperrerapunk/",
+    "facebook": "https://www.facebook.com/laperrerapunk",
+    "youtube": "https://www.youtube.com/@laperrerapunk",
+    "spotify": "https://open.spotify.com/artist/4Q87nJo9ODwjEtXmZRLJKV?si=IYthWDhORxWxKls98PZndA"
   }
-  
+}

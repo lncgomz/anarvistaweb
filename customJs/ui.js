@@ -10,9 +10,6 @@ function takeScreenshot() {
     fetch("./links.json")
       .then((response) => response.json())
       .then((json) => {
-        var iframe = document.getElementById("vrIFrame");
-        var innerDoc =
-          iframe.contentDocument || iframe.contentWindow.document;
-        innerDoc.getElementById("links").value = json;
+        document.getElementById("links").value = json;
       });
   }
