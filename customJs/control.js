@@ -7,28 +7,15 @@ function retrieveLinks() {
 }
 
 AFRAME.registerComponent('scenecontroller', {
-  // tick: function (time, timeDelta) {
+  tick: function (time, timeDelta) {
     
-  //   var vid = document.querySelectorAll('video')
-  //   if (vid.length > 0) {
-  //     var spn = document.getElementsByClassName('spinnerContainer')[0]
-  //     var cam = document.getElementsByClassName('scene')[0]
-  //     var rg = document.getElementsByClassName('rightGroup')[0]
-  //     if (spn) {
-  //       spn.setAttribute('style', 'display: none')
-  //       cam.removeAttribute('hidden')
-  //       rg.removeAttribute('hidden')
-  //       let info = document.getElementsByClassName('infoFooter')[0]
-  //       info.innerHTML = 'Escanea el marcador AR con la cámara'
-  //     }      
-      
-  //   } else {
-  //     var spn = document.getElementsByClassName('spinnerContainer')[0]
-  //     if (spn) {
-  //       spn.setAttribute('style', 'display: flex')
-  //     }      
-  //   }
-  // },
+    var vid = document.querySelectorAll('video')
+    if (vid.length > 0) {
+      vid[0].removeAttribute('hidden')
+    } else {
+      vid[0].setAttribute('hidden', 'true')    
+    }
+  },
 })
 
 AFRAME.registerComponent('registerevents', {
@@ -37,12 +24,7 @@ AFRAME.registerComponent('registerevents', {
     let sounds = Array.prototype.slice.call(
       document.querySelectorAll('[sound]'),
     )
-    let entities = Array.prototype.slice.call(
-      document.querySelectorAll('a-entity'),
-    )
-    let models = Array.prototype.slice.call(
-      document.querySelectorAll('a-asset-item'),
-    )
+
     let names = {
       escasez: 'Escasez Punk Rock',
       dw: 'Detective Wadd',
@@ -60,6 +42,7 @@ AFRAME.registerComponent('registerevents', {
       caminata: 'Caminatas Punk',
       odio: 'O.D.I.O.',
       perrera: 'La Perrera',
+      punqueria: 'La Punquería'
     }
 
     let songs = {
@@ -79,28 +62,37 @@ AFRAME.registerComponent('registerevents', {
       caminata: 'Portatu - Skulls',
       odio: 'O.D.I.O. - Los Nadie',
       perrera: 'La Perrera - La Perrera',
+      punqueria: 'La Punquería - El Paria'
     }
 
     marker.addEventListener('markerFound', function () {
+      debugger;
       const entityTag = `#${marker.id}`
       let cmd = document.getElementsByClassName('command')[0];
       cmd.setAttribute('hidden', 'true');
       let links = document.getElementById('links').value
-      let currentLinks = links[marker.id]
-      let buttons = Array.prototype.slice.call(document.getElementsByTagName('button'))
-      currentMarker = marker.id
-      processButtons(buttons, currentLinks, marker.id, names, songs)
-
-      const filteredSound = sounds.filter(
-        (s) => s.components['gltf-model'].attrValue === entityTag,
-      )
-      if (Array.isArray(filteredSound) && filteredSound[0]) {
-        let sound = filteredSound[0]
-        sound.components.sound.playSound()
+      if (links) {
+        marker.removeAttribute('hidden')
+        let currentLinks = links[marker.id]
+        let buttons = Array.prototype.slice.call(document.getElementsByTagName('button'))
+        currentMarker = marker.id
+        processButtons(buttons, currentLinks, marker.id, names, songs)
+        const filteredSound = sounds.filter(
+          (s) => s.components['gltf-model'].attrValue === entityTag,
+        )
+        if (Array.isArray(filteredSound) && filteredSound[0]) {
+          let sound = filteredSound[0]
+          sound.components.sound.playSound()
+        }
+      } else {
+        debugger;
+        let cam = document.querySelectorAll('video')[0];
+        document.querySelectorAll('video')[0].setAttribute('hidden', 'true')
       }
     })
 
     marker.addEventListener('markerLost', function () {
+      debugger
       document.getElementsByClassName('legendText')[0].setAttribute('hidden', 'true')
       document.getElementsByClassName('songText')[0].setAttribute('hidden', 'true')
       document.getElementsByClassName('command')[0].removeAttribute('hidden');

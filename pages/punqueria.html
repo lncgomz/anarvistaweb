@@ -1,13 +1,14 @@
-<!DOCTYPE html>
+e<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
+    <script src="../js/aframe.min.js" type="text/javascript"></script>
+    <script src="../js/aframe-ar.js" type="text/javascript"></script>
+    <script src="../js/aframe-particle-system-component.js" type="text/javascript"></script>
   </head>
   <link rel="stylesheet" href="../css/cus.css" />
   <link rel="stylesheet" href="../css/customFonts.css" />
-  <script src="../js/aframe.min.js"></script>
-  <script src="../js/aframe-ar.js"></script>
-  <script src="../js/aframe-particle-system-component.js"></script>
+  
   <script
       src="https://kit.fontawesome.com/a927a7050d.js"
       crossorigin="anonymous"
@@ -21,42 +22,57 @@
   <script src="../customJs/control.js"></script>
   <body style="margin: 0px; overflow: hidden;" onload="retrieveLinks()">
     <span id="links" hidden></span>
-    <a-scene embedded vr-mode-ui="enabled: false;" arjs='debugUIEnabled: false; sourceType: webcam; sourceWidth:640; sourceHeight:480; displayWidth: 640; displayHeight: 480; detectionMode: color_and_matrix;' renderer='precision: medium;'>
+    <a-scene embedded vr-mode-ui="enabled: false;" arjs='debugUIEnabled: false; sourceType: webcam; sourceWidth:640; sourceHeight:480; displayWidth: 640; displayHeight: 480; detectionMode: mono_and_matrix;' renderer='precision: medium;'>
         <a-assets>
-          <a-asset-item id="med" src="../models/med.gltf"></a-asset-item>
+          <a-asset-item id="punqueria" src="../models/punqueria.gltf"></a-asset-item>
           <audio
-            id="medAudio"
-            src="../audio/MED.mp3"
+            id="punqueriaAudio"
+            src="../audio/elParia.mp3"
             preload="auto"
           ></audio>
         </a-assets>
   
-
-        <a-marker-camera id="med" type="pattern" url="../data/med.patt" registerevents>
-          <a-entity
-            position="0 -1 0"
-            particle-system="
-            texture: ../images/particles/med.png;
-            color: #000000, #FFFFFF;
-            size: 2, 0;
-            velocityValue: 0.007 0.005 0.003;
-            velocitySpread: 0.7 0 0.3;
-            accelerationValue: 0.003 0.005 0.007;
-            accelerationSpread: 0.005 0.005 0.005;
-            rotationAngle: 0;
-            blending: 1;
-            particleCount: 10;
-            maxAge: 5;"
-          ></a-entity>
-          <a-entity
-            position="0 0 0"
-            rotation="0 0 0"
-            scale="15 15 15"
-            gltf-model="#med"
-            sound="src: #medAudio; autoplay: false; loop: false"
-            animation="property: scale; from: 15 15 15; to: 16 16 16; loop: true; dur: 2000"
-          ></a-entity>
-        </a-marker-camera>
+      <a-marker-camera id="punqueria" type="pattern" url="../data/punqueria.patt" registerevents>
+        <a-entity
+          position="0 0 0"
+          rotation="0 0 0"
+          scale="3 3 3"
+          gltf-model="#punqueria"
+          sound="src: #punqueriaAudio; autoplay: false; loop: false"
+          animation="property: scale; from: 3 3 3; to: 6 6 6; loop: true; dur: 4000"
+          animation__2="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 3000"
+        ></a-entity>
+        <a-entity
+          position="0 -1 0"
+          particle-system="
+              texture: ../images/particles/punqueriaIcon.png;
+              color: #FFFFFF, #FFFFFF;
+              size: 1, 0;
+              velocityValue: 0.007 0.005 0.003;
+              velocitySpread: 0.7 0 0.3;
+              accelerationValue: 0.003 0.005 0.007;
+              accelerationSpread: 0.005 0.005 0.005;
+              rotationAngle: 0;
+              blending: 1;
+              particleCount: 100;
+              maxAge: 5;"
+        ></a-entity>
+        <a-entity
+          position="0 -1 0"
+          particle-system="
+              texture: ../images/particles/punqueriaIcon2.png;
+              color: #FFFFFF, #FFFFFF;
+              size: 1, 0;
+              velocityValue: 0.007 0.005 0.003;
+              velocitySpread: 0.7 0 0.3;
+              accelerationValue: 0.003 0.005 0.007;
+              accelerationSpread: 0.005 0.005 0.005;
+              rotationAngle: 0;
+              blending: 1;
+              particleCount: 50;
+              maxAge: 5;"
+        ></a-entity>
+      </a-marker-camera>
       <!-- <a-entity camera mouse-cursor position="0 0 0"> -->
     </a-scene>
 

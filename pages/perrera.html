@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
   <link rel="stylesheet" href="../css/cus.css" />
   <link rel="stylesheet" href="../css/customFonts.css" />
   <script src="../js/aframe.min.js"></script>
@@ -29,7 +32,7 @@
         </a-assets>
   
 
-        <a-marker
+        <a-marker-camera
         id="perrera"
         type="pattern"
         url="../data/perrera.patt"
@@ -60,8 +63,8 @@
           animation__2="property: scale; from:5 5 5; to:15 15 15; loop: true; dur: 6000"
           sound="src: #perreraAudio; autoplay: false; loop: false"
         ></a-entity>
-      </a-marker>
-      <a-entity camera></a-entity>
+      </a-marker-camera>
+      <!-- <a-entity camera mouse-cursor position="0 0 0"> -->
     </a-scene>
 
     <footer>   
@@ -72,7 +75,7 @@
         <div class="col-4 songText" hidden></div>
         <div class="col-2"><a href="../about.html"><i class="ctrlBtn fa-solid fa-info"></i></a></div>
       </div>  
-      <div class="col-12 centerGroup">
+      <div class="col-12 centerGroup btnGroup">
           <button id="facebookBtn" hidden="true">
             <i class="fa fa-brands fa-facebook"></i>
           </button>
