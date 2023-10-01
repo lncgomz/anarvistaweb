@@ -2,12 +2,12 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <script src="../js/aframe.min.js"></script>
+    <script src="../js/aframe-ar.js"></script>
+    <script src="../js/aframe-particle-system-component.js"></script>
   </head>
   <link rel="stylesheet" href="../css/cus.css" />
   <link rel="stylesheet" href="../css/customFonts.css" />
-  <script src="../js/aframe.min.js"></script>
-  <script src="../js/aframe-ar.js"></script>
-  <script src="../js/aframe-particle-system-component.js"></script>
   <script
       src="https://kit.fontawesome.com/a927a7050d.js"
       crossorigin="anonymous"
@@ -21,7 +21,7 @@
   <script src="../customJs/control.js"></script>
   <body style="margin: 0px; overflow: hidden;" onload="retrieveLinks()">
     <span id="links" hidden></span>
-    <a-scene embedded vr-mode-ui="enabled: false;" arjs='debugUIEnabled: false; sourceType: webcam; sourceWidth:640; sourceHeight:480; displayWidth: 640; displayHeight: 480; detectionMode: color_and_matrix;' renderer='precision: medium;'>
+    <a-scene embedded vr-mode-ui="enabled: false;" arjs='debugUIEnabled: false; sourceType: webcam; sourceWidth:640; sourceHeight:480; displayWidth: 640; displayHeight: 480; ' renderer='antialias: true; alpha: true; precision: medium;'>
         <a-assets>
           <a-asset-item id="procesx" src="../models/procesx.gltf"></a-asset-item>
           <audio
@@ -30,44 +30,44 @@
             preload="auto"
           ></audio>
         </a-assets>
-  
 
-        <a-marker-camera
-        id="procesx"
-        type="pattern"
-        url="../data/procesx.patt"
-        registerevents
-      >
-        <a-entity
-          position="0 0 0"
-          particle-system="
-          texture: ../images/particles/procesx.png;
-          color: #000000, #FFFFFF;
-          size: 1, 0;
-          velocityValue: 0.007 0.005 0.003;
-          velocitySpread: 0.7 0 0.3;
-          accelerationValue: 0.003 0.005 0.007;
-          accelerationSpread: 0.005 0.005 0.005;
-          rotationAngle: 0;
-          blending: 1;
-          particleCount: 200;
-          maxAge: 5;"
-        ></a-entity>
-        <a-entity
-          position="0 0 0"
-          rotation="0 0 0"
-          scale="0.15 0.15 0.15"
-          gltf-model="#procesx"
-          animation="property: rotation; to: 0 45 0; loop: true; dur: 1000"
-          sound="src: #procesxAudio; autoplay: false; loop: false"
-        ></a-entity>
-      </a-marker-camera>
-      <!-- <a-entity camera mouse-cursor position="0 0 0"> -->
+        <a-marker
+        position="0 0 0"
+          id="procesx"
+          type="pattern"
+          url="../data/procesx.patt"
+          smoothCount=0 smoothTolerance=0.0001 registerevents
+        >
+          <a-entity
+            position="0 0 0"
+            particle-system="
+            texture: ../images/particles/procesx.png;
+            color: #000000, #FFFFFF;
+            size: 1, 0;
+            velocityValue: 0.007 0.005 0.003;
+            velocitySpread: 0.7 0 0.3;
+            accelerationValue: 0.003 0.005 0.007;
+            accelerationSpread: 0.005 0.005 0.005;
+            rotationAngle: 0;
+            blending: 1;
+            particleCount: 200;
+            maxAge: 5;"
+          ></a-entity>
+          <a-entity
+            position="0 0 0"
+            rotation="0 0 0"
+            scale="0.15 0.15 0.15"
+            gltf-model="#procesx"
+            animation="property: rotation; to: 0 45 0; loop: true; dur: 1000"
+            sound="src: #procesxAudio; autoplay: false; loop: false"
+          ></a-entity>
+        </a-marker>
+      <a-entity camera position="0 0 0"></a-entity>
     </a-scene>
 
     <footer>   
       <div class="row legendGroup">
-        <div class="col-2"><a href="../index.html"><i class="ctrlBtn fa-solid fa-arrow-left"></i></a></div>
+        <div class="col-2"><a href="../gallery.html"><i class="ctrlBtn fa-solid fa-arrow-left"></i></a></div>
         <div class="col-8 command">Escanea el marcador AR</div>
         <div class="col-4 infoFooter legendText" hidden></div>
         <div class="col-4 songText" hidden></div>

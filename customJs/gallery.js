@@ -17,6 +17,7 @@ let names = {
   caminata: 'Caminatas Punk',
   odio: 'O.D.I.O.',
   perrera: 'La Perrera',
+  nacionCriminal: 'Nación Criminal'
 }
 
 function clicked(tag) {

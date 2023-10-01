@@ -42,7 +42,8 @@ AFRAME.registerComponent('registerevents', {
       caminata: 'Caminatas Punk',
       odio: 'O.D.I.O.',
       perrera: 'La Perrera',
-      punqueria: 'La Punquería'
+      punqueria: 'La Punquería',
+      nc: 'Nación Criminal'
     }
 
     let songs = {
@@ -62,12 +63,14 @@ AFRAME.registerComponent('registerevents', {
       caminata: 'Portatu - Skulls',
       odio: 'O.D.I.O. - Los Nadie',
       perrera: 'La Perrera - La Perrera',
-      punqueria: 'La Punquería - El Paria'
+      punqueria: 'La Punquería - El Paria',
+      nc: 'Nación Criminal - Correr El Riesgo'
     }
 
     marker.addEventListener('markerFound', function () {
       debugger;
-      const entityTag = `#${marker.id}`
+      const entityTag = `#${marker.id}`   
+      
       let cmd = document.getElementsByClassName('command')[0];
       cmd.setAttribute('hidden', 'true');
       let links = document.getElementById('links').value
@@ -85,9 +88,7 @@ AFRAME.registerComponent('registerevents', {
           sound.components.sound.playSound()
         }
       } else {
-        debugger;
-        let cam = document.querySelectorAll('video')[0];
-        document.querySelectorAll('video')[0].setAttribute('hidden', 'true')
+        return
       }
     })
 
