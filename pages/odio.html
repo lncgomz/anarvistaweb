@@ -21,7 +21,7 @@
   <script src="../customJs/control.js"></script>
   <body style="margin: 0px; overflow: hidden;" onload="retrieveLinks()">
     <span id="links" hidden></span>
-    <a-scene embedded vr-mode-ui="enabled: false;" arjs='debugUIEnabled: false; sourceType: webcam; sourceWidth:640; sourceHeight:480; displayWidth: 640; displayHeight: 480; ' renderer='antialias: true; alpha: true; precision: medium;'>
+    <a-scene embedded vr-mode-ui="enabled: false;" arjs='debugUIEnabled: false; sourceType: webcam; sourceWidth:640; sourceHeight:480; displayWidth: 640; displayHeight: 480; '>
         <a-assets>
           <a-asset-item id="odio" src="../models/odio.gltf"></a-asset-item>
           <audio
@@ -61,7 +61,7 @@
             ></a-entity>
         </a-marker>
         
-      <a-entity camera position="0 0 0"></a-entity>
+      <a-entity camera></a-entity>
     </a-scene>
 
     <footer>   
@@ -99,7 +99,10 @@
           </button>
           <button id="webBtn" hidden="true">
             <i class="fa fa-solid fa-globe"></i>
-          </button>          
+          </button>   
+          <button id="filesBtn" hidden="true">
+            <i class="fa fa-solid fa-guitar"></i>
+          </button>        
         </div>
       </div>
     </footer>
