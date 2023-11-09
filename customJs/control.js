@@ -43,7 +43,9 @@ AFRAME.registerComponent('registerevents', {
       odio: 'O.D.I.O.',
       perrera: 'La Perrera',
       punqueria: 'La Punquería',
-      nc: 'Nación Criminal'
+      nc: 'Nación Criminal',
+      katalexia: 'Katalexia',
+      falp: 'IX Feria Anarquista del Libro y La Publicación'
     }
 
     let songs = {
@@ -64,7 +66,9 @@ AFRAME.registerComponent('registerevents', {
       odio: 'O.D.I.O. - Los Nadie',
       perrera: 'La Perrera - La Perrera',
       punqueria: 'La Punquería - El Paria',
-      nc: 'Nación Criminal - Correr El Riesgo'
+      nc: 'Nación Criminal - Correr El Riesgo',
+      katalexia: 'Rompiendo Cadenas',
+      falp: '@patia No - Feria de Cultura Libertaria'
     }
 
     marker.addEventListener('markerFound', function () {
