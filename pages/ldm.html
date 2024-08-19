@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+    <meta http-equiv=“Pragma” content=”no-cache”><meta http-equiv=“Expires” content=”-1″><meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
   <script src="../js/aframe.min.js"></script>
   <script src="../js/aframe-ar.js"></script>
   <script src="../js/aframe-particle-system-component.js"></script>
@@ -19,31 +20,48 @@
   <a-scene embedded vr-mode-ui="enabled: false;"
     arjs='debugUIEnabled: false; sourceType: webcam; sourceWidth:640; sourceHeight:480; displayWidth: 640; displayHeight: 480; ' >
     <a-assets>
-      <a-asset-item id="falp" src="../models/falp_2.gltf"></a-asset-item>
-      <a-asset-item id="falp2" src="../models/falp_1.gltf"></a-asset-item>
-      <audio id="falpAudio" src="../audio/feriaDeCulturaLibertaria.mp3" preload="auto"></audio>
+      <a-asset-item id="ldm" src="../models/ldm.gltf"></a-asset-item>
+      <audio id="ldmAudio" src="../audio/queAsco.mp3" preload="auto"></audio>
     </a-assets>
 
-    <a-marker position="0 0 0" id="falp" type="pattern" url="../data/falp.patt" smoothCount=0 smoothTolerance=0.0001 registerevents>
-      <a-entity position="0 0 0" rotation="0 0 0" scale="5 5 5" gltf-model="#falp2"></a-entity>
-        <a-entity position="0 0 0" rotation="0 0 0" scale="5 5 5" gltf-model="#falp"
-        sound="src: #falpAudio; autoplay: false; loop: false"
-        animation="property: rotation; from: 0 0 0; to: 360 0 0; loop: true; dur: 2000"></a-entity>
+    <a-marker position="0 0 0" id="ldm" type="pattern" url="../data/ldm.patt" smoothCount=0 smoothTolerance=0.0001 registerevents>
+        <a-entity position="0 0 0" rotation="0 0 0" scale="5 5 5" gltf-model="#ldm"
+        sound="src: #ldmAudio; autoplay: false; loop: false"
+        animation="property: scale; from: 5 5 5; to: 8 8 8; loop: true; dur: 9000"></a-entity>
 
         
       <a-entity position="0 -1 0" particle-system="
-                  texture: ../images/particles/anarchyW.png;
+                  texture: ../images/particles/hand.png;
                   color: #000000, #FFFFFF;
-                  size: 3, 0;
+                  size: 1, 0;
                   velocityValue: 0.007 0.005 0.003;
                   velocitySpread: 0.7 0 0.3;
                   accelerationValue: 0.003 0.005 0.007;
                   accelerationSpread: 0.005 0.005 0.005;
                   rotationAngle: 0;
                   blending: 1;
-                  particleCount: 200;
+                  particleCount: 100;
                   maxAge: 5;"></a-entity>
     </a-marker>
+    <a-marker position="0 0 0" id="ldm2" type="pattern" url="../data/ldm2.patt" smoothCount=0 smoothTolerance=0.0001 registerevents>
+      <a-entity position="0 0 0" rotation="0 0 0" scale="5 5 5" gltf-model="#ldm"
+      sound="src: #ldmAudio; autoplay: false; loop: false"
+      animation="property: scale; from: 5 5 5; to: 8 8 8; loop: true; dur: 9000"></a-entity>
+
+      
+    <a-entity position="0 -1 0" particle-system="
+                texture: ../images/particles/hand.png;
+                color: #000000, #FFFFFF;
+                size: 1, 0;
+                velocityValue: 0.007 0.005 0.003;
+                velocitySpread: 0.7 0 0.3;
+                accelerationValue: 0.003 0.005 0.007;
+                accelerationSpread: 0.005 0.005 0.005;
+                rotationAngle: 0;
+                blending: 1;
+                particleCount: 100;
+                maxAge: 5;"></a-entity>
+  </a-marker>
     <a-entity camera position="0 0 0"></a-entity>
   </a-scene>
 

@@ -45,7 +45,14 @@ AFRAME.registerComponent('registerevents', {
       punqueria: 'La Punquería',
       nc: 'Nación Criminal',
       katalexia: 'Katalexia',
-      falp: 'IX Feria Anarquista del Libro y La Publicación'
+      falp: 'IX Feria Anarquista del Libro y La Publicación',
+      ldm: 'Los de Menos',
+      vinilos: 'Vinilos & Bebidas 77',
+      comuneros: 'Colectivo Los Comuneros',
+      fanzineroso: 'Fanzineroso Vocerx Libertarix',
+      ultrazonido: 'Ultrazonido',
+      tz: 'Tukuca Zakayama',
+      sietebalazos: '7 Balazos'
     }
 
     let songs = {
@@ -68,7 +75,14 @@ AFRAME.registerComponent('registerevents', {
       punqueria: 'La Punquería - El Paria',
       nc: 'Nación Criminal - Correr El Riesgo',
       katalexia: 'Rompiendo Cadenas',
-      falp: '@patia No - Feria de Cultura Libertaria'
+      falp: '@patia No - Feria de Cultura Libertaria',
+      ldm: 'Los de Menos - Que Asco',
+      vinilos: 'The Clash - I Fought the Law',
+      comuneros: 'Conjunto Granadino - Tapetusa',
+      fanzineroso: 'La Polla Records - Sin País',
+      ultrazonido: 'Ultrazonido - Esther',
+      tz: 'Tukuca Zakayama - Perorata',
+      sietebalazos: 'Punk y Groserías'
     }
 
     marker.addEventListener('markerFound', function () {

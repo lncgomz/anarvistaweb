@@ -8,6 +8,7 @@ let names = {
   agente: 'Agente Extraño',
   coprofagia: 'Coprofagia',
   fango: 'Fango',
+  fanzineroso: 'Fanzineroso',
   proxtatikoz: 'Proxtatikoz',
   som: 'Solución o Muerte TPHC',
   mayoria: 'Mayoría Equivocada',
@@ -17,7 +18,15 @@ let names = {
   caminata: 'Caminatas Punk',
   odio: 'O.D.I.O.',
   perrera: 'La Perrera',
-  nacionCriminal: 'Nación Criminal'
+  nacionCriminal: 'Nación Criminal',
+  katalexia: 'Katalexia',
+  falp: 'IX Feria Anarquista del Libro y La Publicación',
+  ldm: 'Los de Menos',
+  vinilos: 'Vinilos & Bebidas 77',
+  comuneros: 'Colectivo Los Comuneros',
+  ultrazonido: 'Ultrazonido',
+  tz: 'Tukuca Zakayama',
+  sietebalazos: '7 Balazos'
 }
 
 function clicked(tag) {

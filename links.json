@@ -73,7 +73,8 @@
     "bandcamp": "https://odio.bandcamp.com/",
     "spotify": "https://open.spotify.com/artist/1pYA1wAYbl8ci0vjExv9Y9?si=hgaeNNneTKmDIiXzYj0MQw",
     "threads": "https://www.threads.net/@odio.hc",
-    "files": "../files/brochureOdio2023.pdf"
+    "files": "../files/brochureOdio2023.pdf",
+    "whatsapp": "https://whatsapp.com/channel/0029VaAVJU384Om4JcXKZM3F"
   },
   "perrera": {
     "instagram": "https://www.instagram.com/laperrerapunk/",
@@ -98,5 +99,38 @@
   },
   "falp":{
     "instagram": "https://www.instagram.com/feria.anarquista.del.libro.ylp/"
+  },
+  "ldm":{
+    "instagram": "https://www.instagram.com/losdemenospunk/",
+    "facebook": "https://www.facebook.com/profile.php?id=100069963941941&mibextid=ZbWKwL",
+    "youtube": "https://www.youtube.com/@losdemenos5979"
+  },
+  "vinilos":{
+    "instagram": "https://www.instagram.com/vinilos.bebidas77/",
+    "facebook": "https://www.facebook.com/search/top?q=vinilos.bebidas77"
+  },
+  "comuneros":{
+    "facebook": "https://www.facebook.com/profile.php?id=100085175584603"
+  }    ,
+  "fanzineroso":{
+    "instagram": "https://www.instagram.com/fanzineroso_vl/"
+  },
+  "ultrazonido":{
+    "facebook" : "https://www.facebook.com/ultrazonido.vnzla",
+    "instagram":"https://www.instagram.com/ultrazonido/",
+    "youtube":"https://www.youtube.com/channel/UCKZz57vyZgDBoEKFreKOyhQ",
+    "bandcamp":"https://ultrazonido.bandcamp.com/"
+  },
+  "tz":{
+    "facebook" : "https://www.facebook.com/tukucazakayama",
+    "instagram":"https://www.instagram.com/tukucazakayama/",
+    "youtube":"https://www.youtube.com/@tukucazakayama",
+    "bandcamp":"https://tukucazakayama.bandcamp.com/"
+  },
+  "sietebalazos":{
+    "facebook" : "https://www.facebook.com/7balazos",
+    "instagram":"https://www.instagram.com/7balazos/",
+    "youtube":"https://www.youtube.com/@7balazospunk",
+    "bandcamp":"https://7balazos.bandcamp.com/"
   }
 }
