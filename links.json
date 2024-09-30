@@ -131,6 +131,13 @@
     "facebook" : "https://www.facebook.com/7balazos",
     "instagram":"https://www.instagram.com/7balazos/",
     "youtube":"https://www.youtube.com/@7balazospunk",
-    "bandcamp":"https://7balazos.bandcamp.com/"
+    "bandcamp":"https://7balazos.bandcamp.com/",
+    "spotify": "https://open.spotify.com/artist/147ynlpDaUp6UdJUXUVtYt"
+  },
+  "ppj":{
+    "facebook" : "https://www.facebook.com/losppjbanda",
+    "instagram":"https://www.instagram.com/losppj",
+    "youtube":"https://youtube.com/@losppj",
+    "telegram":"https://t.me/losppj"
   }
 }

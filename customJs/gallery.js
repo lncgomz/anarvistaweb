@@ -26,7 +26,8 @@ let names = {
   comuneros: 'Colectivo Los Comuneros',
   ultrazonido: 'Ultrazonido',
   tz: 'Tukuca Zakayama',
-  sietebalazos: '7 Balazos'
+  sietebalazos: '7 Balazos',
+  ppj: 'Los PPJ'
 }
 
 function clicked(tag) {

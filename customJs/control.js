@@ -52,7 +52,8 @@ AFRAME.registerComponent('registerevents', {
       fanzineroso: 'Fanzineroso Vocerx Libertarix',
       ultrazonido: 'Ultrazonido',
       tz: 'Tukuca Zakayama',
-      sietebalazos: '7 Balazos'
+      sietebalazos: '7 Balazos',
+      ppj: 'Los PPJ'
     }
 
     let songs = {
@@ -82,13 +83,13 @@ AFRAME.registerComponent('registerevents', {
       fanzineroso: 'La Polla Records - Sin País',
       ultrazonido: 'Ultrazonido - Esther',
       tz: 'Tukuca Zakayama - Perorata',
-      sietebalazos: 'Punk y Groserías'
+      sietebalazos: 'Punk y Groserías',
+      ppj: 'El Locutor'
     }
 
     marker.addEventListener('markerFound', function () {
-      debugger;
-      const entityTag = `#${marker.id}`   
-      
+      marker.emit('detectedEvent');
+      const entityTag = `#${marker.id}`;
       let cmd = document.getElementsByClassName('command')[0];
       cmd.setAttribute('hidden', 'true');
       let links = document.getElementById('links').value
@@ -97,6 +98,7 @@ AFRAME.registerComponent('registerevents', {
         let currentLinks = links[marker.id]
         let buttons = Array.prototype.slice.call(document.getElementsByTagName('button'))
         currentMarker = marker.id
+        
         processButtons(buttons, currentLinks, marker.id, names, songs)
         const filteredSound = sounds.filter(
           (s) => s.components['gltf-model'].attrValue === entityTag,
@@ -111,7 +113,6 @@ AFRAME.registerComponent('registerevents', {
     })
 
     marker.addEventListener('markerLost', function () {
-      debugger
       document.getElementsByClassName('legendText')[0].setAttribute('hidden', 'true')
       document.getElementsByClassName('songText')[0].setAttribute('hidden', 'true')
       document.getElementsByClassName('command')[0].removeAttribute('hidden');
