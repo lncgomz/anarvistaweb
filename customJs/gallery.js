@@ -27,7 +27,9 @@ let names = {
   ultrazonido: 'Ultrazonido',
   tz: 'Tukuca Zakayama',
   sietebalazos: '7 Balazos',
-  ppj: 'Los PPJ'
+  ppj: 'Los PPJ',
+  punkalparke: 'Festival Punk Al Parke',
+  rdc: 'Ratas de Ciudad'
 }
 
 function clicked(tag) {

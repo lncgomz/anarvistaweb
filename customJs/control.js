@@ -53,7 +53,9 @@ AFRAME.registerComponent('registerevents', {
       ultrazonido: 'Ultrazonido',
       tz: 'Tukuca Zakayama',
       sietebalazos: '7 Balazos',
-      ppj: 'Los PPJ'
+      ppj: 'Los PPJ',
+      punkalparke: 'Acción Mutante',
+      rdc: 'Ratas de Ciudad feat Manolo Uvi Commando 9mm'
     }
 
     let songs = {
@@ -84,7 +86,9 @@ AFRAME.registerComponent('registerevents', {
       ultrazonido: 'Ultrazonido - Esther',
       tz: 'Tukuca Zakayama - Perorata',
       sietebalazos: 'Punk y Groserías',
-      ppj: 'El Locutor'
+      ppj: 'El Locutor',
+      punkalparke: 'Chikipodris',
+      rdc: 'Cementerio'
     }
 
     marker.addEventListener('markerFound', function () {

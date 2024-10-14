@@ -139,5 +139,17 @@
     "instagram":"https://www.instagram.com/losppj",
     "youtube":"https://youtube.com/@losppj",
     "telegram":"https://t.me/losppj"
+  },
+  "punkalparke":{
+    "facebook" : "https://www.facebook.com/profile.php?id=61564522606930&locale=es_LA",
+    "instagram":"https://www.instagram.com/festivalpunkalparke"
+  },
+  "rdc":{
+    "facebook" : "https://www.facebook.com/share/bfSLUJWd15nUBCkV/",
+    "instagram":"https://www.instagram.com/ratasdeciudad_ec/",
+    "spotify": "https://open.spotify.com/artist/5MKRoF4LDpGhpuZ4bIizSh",
+    "youtube": "https://music.youtube.com/channel/UCHdJszN3JPnW2Wd3kFNvIEg",
+    "extra1" : "https://www.facebook.com/share/RqiwHGfP5idcLoac/",
+    "extra2": "https://youtube.com/@kefuturo6892"
   }
 }
