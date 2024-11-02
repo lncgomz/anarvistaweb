@@ -20,7 +20,7 @@ let names = {
   perrera: 'La Perrera',
   nacionCriminal: 'Nación Criminal',
   katalexia: 'Katalexia',
-  falp: 'IX Feria Anarquista del Libro y La Publicación',
+  falp: 'X Feria Anarquista del Libro y La Publicación',
   ldm: 'Los de Menos',
   vinilos: 'Vinilos & Bebidas 77',
   comuneros: 'Colectivo Los Comuneros',
