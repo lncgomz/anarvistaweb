@@ -151,5 +151,12 @@
     "youtube": "https://music.youtube.com/channel/UCHdJszN3JPnW2Wd3kFNvIEg",
     "extra1" : "https://www.facebook.com/share/RqiwHGfP5idcLoac/",
     "extra2": "https://youtube.com/@kefuturo6892"
+  },
+  "fechoria":{
+    "facebook" : "https://www.facebook.com/fechoria.streetpunk",
+    "instagram":"https://www.instagram.com/fechoria_street_punk/",
+    "spotify": "https://open.spotify.com/artist/4Bie2WpNKeNzn9D82ZgvUv",
+    "youtube": "https://www.youtube.com/@fechoriastreetpunk2985",
+    "bandcamp" : "https://fechoria-streetpunx.bandcamp.com/"
   }
 }

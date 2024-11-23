@@ -55,7 +55,8 @@ AFRAME.registerComponent('registerevents', {
       sietebalazos: '7 Balazos',
       ppj: 'Los PPJ',
       punkalparke: 'Acción Mutante',
-      rdc: 'Ratas de Ciudad feat Manolo Uvi Commando 9mm'
+      rdc: 'Ratas de Ciudad feat Manolo Uvi Commando 9mm',
+      fechoria: 'Fechoría Street Punk'
     }
 
     let songs = {
@@ -88,7 +89,8 @@ AFRAME.registerComponent('registerevents', {
       sietebalazos: 'Punk y Groserías',
       ppj: 'El Locutor',
       punkalparke: 'Chikipodris',
-      rdc: 'Cementerio'
+      rdc: 'Cementerio',
+      fechoria: ''
     }
 
     marker.addEventListener('markerFound', function () {

@@ -29,7 +29,8 @@ let names = {
   sietebalazos: '7 Balazos',
   ppj: 'Los PPJ',
   punkalparke: 'Festival Punk Al Parke',
-  rdc: 'Ratas de Ciudad'
+  rdc: 'Ratas de Ciudad',
+  fechoria: 'Fechoría Street Punk'
 }
 
 function clicked(tag) {
