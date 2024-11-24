@@ -24,9 +24,9 @@
             "name" : "SVGMat.001",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
-                    0,
-                    0,
-                    0,
+                    0.5963143110275269,
+                    0.5963143110275269,
+                    0.5963143110275269,
                     1
                 ],
                 "metallicFactor" : 0.30000001192092896,
