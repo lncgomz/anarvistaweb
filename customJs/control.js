@@ -90,7 +90,7 @@ AFRAME.registerComponent('registerevents', {
       ppj: 'El Locutor',
       punkalparke: 'Chikipodris',
       rdc: 'Cementerio',
-      fechoria: ''
+      fechoria: 'Así Somos'
     }
 
     marker.addEventListener('markerFound', function () {
