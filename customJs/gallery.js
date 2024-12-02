@@ -14,6 +14,7 @@ let names = {
   mayoria: 'Mayoría Equivocada',
   desquiciadamente: 'Desquiciada-Mente',
   anarvista: 'AnARvista',
+  av: 'AnARvista',
   med: 'Mentes en Disturbio',
   caminata: 'Caminatas Punk',
   odio: 'O.D.I.O.',

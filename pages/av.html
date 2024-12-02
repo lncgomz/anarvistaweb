@@ -23,14 +23,15 @@
     arjs='debugUIEnabled: false; sourceType: webcam; sourceWidth:640; sourceHeight:480; displayWidth: 640; displayHeight: 480; '>
     <a-assets>
       <a-asset-item id="anarvista" src="../models/anarvista.gltf"></a-asset-item>
+      
       <audio id="anarvistaAudio" src="../audio/hazloTuMismo.mp3" preload="auto"></audio>
     </a-assets>
 
-    <a-marker position="0 0 0" id="anarvista" type="pattern" url="../data/anarvista.patt" smoothCount=0
+    <a-marker position="0 0 0" id="anarvista" type="pattern" url="../data/anarvistaB.patt" smoothCount=0
       smoothTolerance=0.0001 registerevents>
       <a-entity look-controls position="0 0 0" rotation="0 0 0" scale="10 10 10" gltf-model="#anarvista"
         sound="src: #anarvistaAudio; autoplay: false; loop: false"
-        animation="property: rotation; from: 0 0 0; to: 0 0 360; loop: true; dur: 3000"></a-entity>
+        animation="property: rotation; from: 0 0 0; to: 0 0 360; loop: true; dur: 3000"></a-entity>      
       <a-entity position="0 0 0" particle-system="
             texture: ../images/particles/anarchy.png;
             size: 0, 0.5, 1;
