@@ -5,20 +5,6 @@ AFRAME.registerComponent('anim1', {
       self.trees = [];      
       const animated = document.querySelector(".animated");
       animated.addEventListener("animationend", e =>{
-        debugger
-        //   let tree3D = el.getObject3D('mesh');
-        //   if (!tree3D){return;}    
-        // console.log('tree3D', tree3D);
-        //   tree3D.traverse(function(node){
-        //       if (node.isMesh){   
-        //         console.log(node);
-        //           self.trees.push(node);
-        //         if(node.name == "Trunk_A"){
-        //           self.treeMat = node.material;
-        //         }
-        //         node.material.map = null;
-        //       }
-        //   });
     });
     el.addEventListener('changecolor', e =>{               
       let colorp = e.detail.color;
@@ -35,7 +21,6 @@ AFRAME.registerComponent('click-listener', {
     let self = this;
     let el = this.el;
     this.el.addEventListener('click', function (evt) {   
-      // Call the Octahedron and trigger it's scalewave animation
       let tree = document.querySelector('#tree');
       let color = el.getAttribute('material', 'color');
      tree.emit('changecolor', color);

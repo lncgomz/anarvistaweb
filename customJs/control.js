@@ -55,9 +55,10 @@ AFRAME.registerComponent('registerevents', {
       sietebalazos: '7 Balazos',
       ppj: 'Los PPJ',
       punkalparke: 'Acción Mutante',
-      rdc: 'Ratas de Ciudad feat Manolo Uvi Commando 9mm',
+      rdc: 'Ratas de Ciudad feat. Manolo Uvi Commando 9mm',
       fechoria: 'Fechoría Street Punk',
-      reciclaje: 'Reciclaje'
+      reciclaje: 'Reciclaje',
+      ppd: 'Presos Por Detenidos'
     }
 
     let songs = {
@@ -76,7 +77,7 @@ AFRAME.registerComponent('registerevents', {
       med: 'AudioDisturbio - Mentes en Disturbio',
       caminata: 'Portatu - Skulls',
       odio: 'O.D.I.O. - Los Nadie',
-      perrera: 'La Perrera - La Perrera',
+      perrera: 'La Perrera',
       punqueria: 'La Punquería - El Paria',
       nc: 'Nación Criminal - Correr El Riesgo',
       katalexia: 'Rompiendo Cadenas',
@@ -92,7 +93,8 @@ AFRAME.registerComponent('registerevents', {
       punkalparke: 'Chikipodris',
       rdc: 'Cementerio',
       fechoria: 'Así Somos',
-      reciclaje: 'Reciclaje - Fiel al Punk'
+      reciclaje: 'Reciclaje - Fiel al Punk',
+      ppd: 'Presos Por Detenidos'
     }
 
     marker.addEventListener('markerFound', function () {
