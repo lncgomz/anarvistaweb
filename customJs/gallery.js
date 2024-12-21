@@ -32,7 +32,8 @@ let names = {
   punkalparke: 'Festival Punk Al Parke',
   rdc: 'Ratas de Ciudad',
   fechoria: 'Fechoría Street Punk',
-  reciclaje: 'Reciclaje'
+  reciclaje: 'Reciclaje',
+  ppd: 'Presos Por Detenidos'
 }
 
 function clicked(tag) {
