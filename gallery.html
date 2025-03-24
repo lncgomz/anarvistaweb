@@ -21,7 +21,6 @@
       crossorigin="anonymous"
     />
     <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
-    <!-- <script src="js/aframe-ar.min.js"></script> -->
     <script
       src="https://kit.fontawesome.com/a927a7050d.js"
       crossorigin="anonymous"
@@ -34,37 +33,38 @@
     <script src="customJs/ui.js"></script>
     <script src="customJs/gallery.js"></script>
   </head>
-  <body>
-    <div class="container">
-      <header class="row header">
-        <div class="col-6">
-          <div class="legendText"></div>
-        </div>
-        <div class="col-6 rightGroup info"><a href="./about.html">AnARvista</a></div>
+  <body class="body-gallery">
+    <div class="container container-gallery">
+      <header class="header">
+        <div class="row">
+          <div class="col-6">
+            <div class="legendText"></div>
+          </div>
+          <div class="col-6 rightGroup info"><a href="./about.html">AnARvista</a></div>
+        </div>        
       </header>
 
       <div class="row">
-        <div class="column">
+        <div class="markers">
           <img src="./markers/agente.png" onclick="clicked('agente')">
           <img src="./markers/anarvista.png" onclick="clicked('anarvista')">
           <img src="./markers/anarvistaB.png" onclick="clicked('av')">
           <img src="./markers/caminata.png" onclick="clicked('caminata')">
           <img src="./markers/comuneros.png" onclick="clicked('comuneros')">
+          <img src="./markers/carajitosgrandes.png" onclick="clicked('carajitosgrandes')">
           <img src="./markers/coprofagia.png" onclick="clicked('coprofagia')">
           <img src="./markers/desquiciadamente.png" onclick="clicked('desquiciadamente')">
           <img src="./markers/dw.png" onclick="clicked('dw')">
           <img src="./markers/escasez.png" onclick="clicked('escasez')">
-          <img src="./markers/fanzineroso.png" onclick="clicked('fanzineroso')">
-          <img src="./markers/fango.png" onclick="clicked('fango')">
           <img src="./markers/falp.png" onclick="clicked('falp')">
+          <img src="./markers/fango.png" onclick="clicked('fango')">
+          <img src="./markers/fanzineroso.png" onclick="clicked('fanzineroso')">
           <img src="./markers/fechoria.png" onclick="clicked('fechoria')">
           <img src="./markers/katalexia.png" onclick="clicked('katalexia')"> 
           <img src="./markers/ldm.png" onclick="clicked('ldm')">
           <img src="./markers/mayoria.png" onclick="clicked('mayoria')">
           <img src="./markers/med.png" onclick="clicked('med')">
           <img src="./markers/nc.png" onclick="clicked('nacionCriminal')">
-        </div>
-        <div class="column"> 
           <img src="./markers/odio.png" onclick="clicked('odio')">     
           <img src="./markers/perrera.png" onclick="clicked('perrera')">
           <img src="./markers/ppd.png" onclick="clicked('ppd')">
@@ -80,8 +80,9 @@
           <img src="./markers/tz.png" onclick="clicked('tz')"> 
           <img src="./markers/ultrazonido.png" onclick="clicked('ultrazonido')">
           <img src="./markers/vinilos.png" onclick="clicked('vinilos')">
-        </div>
+        </div>        
       </div>
+      <div class="clear"></div>
 
       <footer class="footer">
         <div class="col-12 centerGroup">

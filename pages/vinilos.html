@@ -3,7 +3,9 @@
 
 <head>
   <meta charset="UTF-8">
-    <meta http-equiv=“Pragma” content=”no-cache”><meta http-equiv=“Expires” content=”-1″><meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
+  <meta http-equiv=“Pragma” content=”no-cache”>
+  <meta http-equiv=“Expires” content=”-1″>
+  <meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
   <script src="../js/aframe.min.js"></script>
   <script src="../js/aframe-ar.js"></script>
   <script src="../js/aframe-particle-system-component.js"></script>
@@ -17,33 +19,45 @@
 
 <body style="margin: 0px; overflow: hidden;" onload="retrieveLinks()">
   <span id="links" hidden></span>
+
+
+
+  <header class="header">
+    <div class="row">
+      <div class="col-12 rightGroup info">
+        <div class="songText" hidden></div>
+      </div>
+    </div>
+  </header>
+
   <a-scene embedded vr-mode-ui="enabled: false;"
-    arjs='debugUIEnabled: false; sourceType: webcam; sourceWidth:640; sourceHeight:480; displayWidth: 640; displayHeight: 480; ' >
+    arjs='debugUIEnabled: false; sourceType: webcam; sourceWidth:640; sourceHeight:480; displayWidth: 640; displayHeight: 480; '>
     <a-assets>
       <a-asset-item id="vinilos2" src="../models/vinilos_1.gltf"></a-asset-item>
       <a-asset-item id="vinilos" src="../models/vinilos_2.gltf"></a-asset-item>
       <audio id="vinilosAudio" src="../audio/iFoughtTheLaw.mp3" preload="auto"></audio>
     </a-assets>
 
-    <a-marker position="0 0 0" id="vinilos" type="pattern" url="../data/vinilos.patt" smoothCount=0 smoothTolerance=0.0001 registerevents>
+    <a-marker position="0 0 0" id="vinilos" type="pattern" url="../data/vinilos.patt" smoothCount=0
+      smoothTolerance=0.0001 registerevents>
       <a-entity position="0 0 0" rotation="0 0 0" scale="10 10 10" gltf-model="#vinilos2"></a-entity>
-        <a-entity position="0 0 0" rotation="0 0 0" scale="10 10 10" gltf-model="#vinilos"
+      <a-entity position="0 0 0" rotation="0 0 0" scale="10 10 10" gltf-model="#vinilos"
         sound="src: #vinilosAudio; autoplay: false; loop: false"
         animation="property: rotation; from: 0 0 0; to: 0 -360 0; loop: true; dur: 10000"></a-entity>
 
-        
+
       <a-entity position="0 -1 0" particle-system="
-                  texture: ../images/particles/vinyl.png;
-                  color: #000000, #FFFFFF;
-                  size: 1, 0;
-                  velocityValue: 0.007 0.005 0.003;
-                  velocitySpread: 0.7 0 0.3;
-                  accelerationValue: 0.003 0.005 0.007;
-                  accelerationSpread: 0.005 0.005 0.005;
-                  rotationAngle: 0;
-                  blending: 1;
-                  particleCount: 200;
-                  maxAge: 5;"></a-entity>
+                texture: ../images/particles/vinyl.png;
+                color: #000000, #FFFFFF;
+                size: 1, 0;
+                velocityValue: 0.007 0.005 0.003;
+                velocitySpread: 0.7 0 0.3;
+                accelerationValue: 0.003 0.005 0.007;
+                accelerationSpread: 0.005 0.005 0.005;
+                rotationAngle: 0;
+                blending: 1;
+                particleCount: 200;
+                maxAge: 5;"></a-entity>
     </a-marker>
     <a-entity camera position="0 0 0"></a-entity>
   </a-scene>
@@ -53,7 +67,6 @@
       <div class="col-2"><a href="../gallery.html"><i class="ctrlBtn fa-solid fa-arrow-left"></i></a></div>
       <div class="col-8 command">Escanea el marcador AR</div>
       <div class="col-4 infoFooter legendText" hidden></div>
-      <div class="col-4 songText" hidden></div>
       <div class="col-2"><a href="../about.html"><i class="ctrlBtn fa-solid fa-info"></i></a></div>
     </div>
     <div class="col-12 centerGroup btnGroup">

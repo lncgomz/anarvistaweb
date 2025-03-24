@@ -1,16 +1,16 @@
-@font-face {
-    font-family: "PunkType";
-    src: url("../fonts/Punktype.ttf") format("truetype");
+  @font-face {
+    font-family: "XTypewriter-Regular";
+    src: url("../fonts/XTypewriter-Regular.ttf") format("truetype");
   }
 
   .legendText, .songText, .command {
-    font-family: "PunkType";
+    font-family: "XTypewriter-Regular";
   }
 
   .btnCtrl {
     background-color: black;
     color: white !;
-    font-family: "PunkType";
+    font-family: "XTypewriter-Regular";
   }
 
   .msgContainer{

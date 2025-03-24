@@ -19,34 +19,44 @@
 
 <body style="margin: 0px; overflow: hidden;" onload="retrieveLinks()">
   <span id="links" hidden></span>
+
+
+
+  <header class="header">
+    <div class="row">
+      <div class="col-12 rightGroup info">
+        <div class="songText" hidden></div>
+      </div>
+    </div>
+  </header>
+
   <a-scene embedded vr-mode-ui="enabled: false;"
-    arjs='debugUIEnabled: false; sourceType: webcam; sourceWidth:640; sourceHeight:480; displayWidth: 640; displayHeight: 480; '>
-    <a-assets>
-      <a-asset-item id="sietebalazos" src="../models/sietebalazos.gltf"></a-asset-item>
-      <a-asset-item id="sietebalazosB" src="../models/sietebalazos_B.gltf"></a-asset-item>
-      <audio id="sietebalazosAudio" src="../audio/PunkyGroserias.mp3" preload="auto"></audio>
-    </a-assets>
+  arjs='debugUIEnabled: false; sourceType: webcam; sourceWidth:640; sourceHeight:480; displayWidth: 640; displayHeight: 480; '>
+  <a-assets>
+    <a-asset-item id="sietebalazos" src="../models/sietebalazos.gltf"></a-asset-item>
+    <a-asset-item id="sietebalazosB" src="../models/sietebalazos_B.gltf"></a-asset-item>
+    <audio id="sietebalazosAudio" src="../audio/PunkyGroserias.mp3" preload="auto"></audio>
+  </a-assets>
 
-    <a-marker position="0 0 0" id="sietebalazos" type="pattern" url="../data/sietebalazos.patt" smoothCount=0
-      smoothTolerance=0.0001 registerevents>
+  <a-marker position="0 0 0" id="sietebalazos" type="pattern" url="../data/sietebalazos.patt" smoothCount=0
+    smoothTolerance=0.0001 registerevents>
 
-      <a-entity position="0 0 0" rotation="0 0 0" scale="3 3 3" gltf-model="#sietebalazos"
-      animation="property: rotation; from: 0 -360 0; to: 0 0 0; loop: true; dur: 4000"
-      sound="src: #sietebalazosAudio; autoplay: false; loop: false"></a-entity>
+    <a-entity position="0 0 0" rotation="0 0 0" scale="3 3 3" gltf-model="#sietebalazos"
+    animation="property: rotation; from: 0 -360 0; to: 0 0 0; loop: true; dur: 4000"
+    sound="src: #sietebalazosAudio; autoplay: false; loop: false"></a-entity>
 
-      <a-entity position="0 0 0" rotation="0 0 0" scale="3 3 3" gltf-model="#sietebalazosB"
-        animation="property: rotation; from: 0 0 0; to: 0 -360 0; loop: true; dur: 4000"></a-entity>
-  
-    </a-marker>
-    <a-entity camera position="0 0 0"></a-entity>
-  </a-scene>
+    <a-entity position="0 0 0" rotation="0 0 0" scale="3 3 3" gltf-model="#sietebalazosB"
+      animation="property: rotation; from: 0 0 0; to: 0 -360 0; loop: true; dur: 4000"></a-entity>
+
+  </a-marker>
+  <a-entity camera position="0 0 0"></a-entity>
+</a-scene>
 
   <footer>
     <div class="row legendGroup">
       <div class="col-2"><a href="../gallery.html"><i class="ctrlBtn fa-solid fa-arrow-left"></i></a></div>
       <div class="col-8 command">Escanea el marcador AR</div>
       <div class="col-4 infoFooter legendText" hidden></div>
-      <div class="col-4 songText" hidden></div>
       <div class="col-2"><a href="../about.html"><i class="ctrlBtn fa-solid fa-info"></i></a></div>
     </div>
     <div class="col-12 centerGroup btnGroup">

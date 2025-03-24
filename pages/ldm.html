@@ -3,7 +3,9 @@
 
 <head>
   <meta charset="UTF-8">
-    <meta http-equiv=“Pragma” content=”no-cache”><meta http-equiv=“Expires” content=”-1″><meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
+  <meta http-equiv=“Pragma” content=”no-cache”>
+  <meta http-equiv=“Expires” content=”-1″>
+  <meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
   <script src="../js/aframe.min.js"></script>
   <script src="../js/aframe-ar.js"></script>
   <script src="../js/aframe-particle-system-component.js"></script>
@@ -17,6 +19,17 @@
 
 <body style="margin: 0px; overflow: hidden;" onload="retrieveLinks()">
   <span id="links" hidden></span>
+
+
+
+  <header class="header">
+    <div class="row">
+      <div class="col-12 rightGroup info">
+        <div class="songText" hidden></div>
+      </div>
+    </div>
+  </header>
+
   <a-scene embedded vr-mode-ui="enabled: false;"
     arjs='debugUIEnabled: false; sourceType: webcam; sourceWidth:640; sourceHeight:480; displayWidth: 640; displayHeight: 480; ' >
     <a-assets>
@@ -70,7 +83,6 @@
       <div class="col-2"><a href="../gallery.html"><i class="ctrlBtn fa-solid fa-arrow-left"></i></a></div>
       <div class="col-8 command">Escanea el marcador AR</div>
       <div class="col-4 infoFooter legendText" hidden></div>
-      <div class="col-4 songText" hidden></div>
       <div class="col-2"><a href="../about.html"><i class="ctrlBtn fa-solid fa-info"></i></a></div>
     </div>
     <div class="col-12 centerGroup btnGroup">

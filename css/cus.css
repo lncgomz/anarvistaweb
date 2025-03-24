@@ -3,8 +3,8 @@ header {
   left: 0;
   top: 0;
   width: 100%;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   margin-bottom: 1;
   text-align: center;
 }
@@ -26,9 +26,6 @@ button {
   -webkit-box-shadow: 0px 0px 32px 8px #080808;
   box-shadow: 0px 0px 32px 8px #080808;
   background-color: #000000;
-  /* -webkit-border-radius: 50px !important;
-  -moz-border-radius: 50px !important; */
-  /* border-radius: 50px !important; */
   border: 3px solid #ffffff;
   cursor: pointer !important;
   color: #ffffff !important;
@@ -45,14 +42,43 @@ button {
   justify-content: center;
   align-items: center;
 }
-.legendText, .songText {
+.legendText {
   width: 50%;
+  padding: 0px;
+  text-align: center;
 }
 
 .ctrlBtn {
-  color:black;
+  color: black;
 }
 .btnGroup {
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.rightGroup {
+  text-align: end;
+  margin-top: 8px;
+  padding-right: 20px;
+}
+
+.rightGroup a {
+  text-decoration: none;
+  color: black;
+}
+.songText {
+  margin-right: 5px;
+}
+
+.info {
+  font-size: 18px;
+}
+
+.scene-container {
+  border-left-style: solid;
+  border-left-color: white;
+  border-left-width: 20px;
+  border-right-style: solid;
+  border-right-color: white;
+  border-right-width: 20px;
 }

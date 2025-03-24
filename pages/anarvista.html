@@ -19,6 +19,17 @@
 
 <body style="margin: 0px; overflow: hidden;" onload="retrieveLinks()">
   <span id="links" hidden></span>
+
+
+
+  <header class="header">
+    <div class="row">
+      <div class="col-12 rightGroup info">
+        <div class="songText" hidden></div>
+      </div>
+    </div>
+  </header>
+
   <a-scene embedded vr-mode-ui="enabled: false;"
     arjs='debugUIEnabled: false; sourceType: webcam; sourceWidth:640; sourceHeight:480; displayWidth: 640; displayHeight: 480; '>
     <a-assets>
@@ -32,16 +43,16 @@
         sound="src: #anarvistaAudio; autoplay: false; loop: false"
         animation="property: rotation; from: 0 0 0; to: 0 0 360; loop: true; dur: 3000"></a-entity>
       <a-entity position="0 0 0" particle-system="
-            texture: ../images/particles/anarchy.png;
-            size: 0, 0.5, 1;
-            velocityValue: 0.005 0.005 0.005;
-            velocitySpread: 0.5 0 0.5; 
-            accelerationValue: 0.005 0.005 0.005;
-            accelerationSpread: 0.005 0.005 0.005;
-            rotationAngle: 0; 
-            blending: 1;
-            particleCount: 100;
-            maxAge: 5; "></a-entity>
+          texture: ../images/particles/anarchy.png;
+          size: 0, 0.5, 1;
+          velocityValue: 0.005 0.005 0.005;
+          velocitySpread: 0.5 0 0.5; 
+          accelerationValue: 0.005 0.005 0.005;
+          accelerationSpread: 0.005 0.005 0.005;
+          rotationAngle: 0; 
+          blending: 1;
+          particleCount: 100;
+          maxAge: 5; "></a-entity>
     </a-marker>
     <a-entity camera position="0 0 0"></a-entity>
   </a-scene>
@@ -51,7 +62,6 @@
       <div class="col-2"><a href="../gallery.html"><i class="ctrlBtn fa-solid fa-arrow-left"></i></a></div>
       <div class="col-8 command">Escanea el marcador AR</div>
       <div class="col-4 infoFooter legendText" hidden></div>
-      <div class="col-4 songText" hidden></div>
       <div class="col-2"><a href="../about.html"><i class="ctrlBtn fa-solid fa-info"></i></a></div>
     </div>
     <div class="col-12 centerGroup btnGroup">

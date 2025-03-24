@@ -3,9 +3,20 @@ body {
   overflow: hidden;
   margin: 0 !important;
   height: 100%;
-  font-family: "PunkType" !important;
+  font-family: "XTypewriter-Regular" !important;
   background-color: black !important;
   color: white !important;
+}
+
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 30px;
+  background-color: white;
+  color: black;
+  text-align: center;
 }
 
 button {
@@ -46,14 +57,14 @@ button:active {
 
 .rightGroup {
   text-align: end;
-  padding:5px;
+  /* padding:5px; */
   margin-top: 8px;
   padding-right: 20px;
 }
 
 .rightGroup a {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 .legendText {

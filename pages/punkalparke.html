@@ -19,38 +19,48 @@
 
 <body style="margin: 0px; overflow: hidden;" onload="retrieveLinks()">
   <span id="links" hidden></span>
+
+
+
+  <header class="header">
+    <div class="row">
+      <div class="col-12 rightGroup info">
+        <div class="songText" hidden></div>
+      </div>
+    </div>
+  </header>
+
   <a-scene embedded vr-mode-ui="enabled: false;"
-    arjs='debugUIEnabled: false; sourceType: webcam; sourceWidth:640; sourceHeight:480; displayWidth: 640; displayHeight: 480; '>
-    <a-assets>
-      <a-asset-item id="punkalparke" src="../models/punkalparke.gltf"></a-asset-item>
-      <a-asset-item id="punkalparkeB" src="../models/punkalparke_B.gltf"></a-asset-item>
-      <a-asset-item id="punkalparkeC" src="../models/punkalparke_C.gltf"></a-asset-item>
-      <audio id="punkalparkeAudio" src="../audio/chikipodris.mp3" preload="auto"></audio>
-    </a-assets>
+  arjs='debugUIEnabled: false; sourceType: webcam; sourceWidth:640; sourceHeight:480; displayWidth: 640; displayHeight: 480; '>
+  <a-assets>
+    <a-asset-item id="punkalparke" src="../models/punkalparke.gltf"></a-asset-item>
+    <a-asset-item id="punkalparkeB" src="../models/punkalparke_B.gltf"></a-asset-item>
+    <a-asset-item id="punkalparkeC" src="../models/punkalparke_C.gltf"></a-asset-item>
+    <audio id="punkalparkeAudio" src="../audio/chikipodris.mp3" preload="auto"></audio>
+  </a-assets>
 
-    <a-marker position="0 0 0" id="punkalparke" type="pattern" url="../data/punkalparke.patt" smoothCount=0
-      smoothTolerance=0.0001 registerevents>
+  <a-marker position="0 0 0" id="punkalparke" type="pattern" url="../data/punkalparke.patt" smoothCount=0
+    smoothTolerance=0.0001 registerevents>
 
-      <a-entity position="0 0 0" rotation="0 0 0" scale="10 10 10" gltf-model="#punkalparke"
-        animation="property: rotation; from: 0 0 0; to: 0 0 359; loop: true; dur: 2000"
-        sound="src: #punkalparkeAudio; autoplay: false; loop: false"></a-entity>
+    <a-entity position="0 0 0" rotation="0 0 0" scale="10 10 10" gltf-model="#punkalparke"
+      animation="property: rotation; from: 0 0 0; to: 0 0 359; loop: true; dur: 2000"
+      sound="src: #punkalparkeAudio; autoplay: false; loop: false"></a-entity>
 
-      <a-entity position="0 0 0" rotation="0 0 0" scale="10 10 10" gltf-model="#punkalparkeB"
-        animation="property: rotation; from: 0 0 0; to: 0 0 -360; loop: true; dur: 3000"></a-entity>
+    <a-entity position="0 0 0" rotation="0 0 0" scale="10 10 10" gltf-model="#punkalparkeB"
+      animation="property: rotation; from: 0 0 0; to: 0 0 -360; loop: true; dur: 3000"></a-entity>
 
-      <a-entity position="0 0 0" rotation="0 0 0" scale="10 10 10" gltf-model="#punkalparkeC"
-        animation="property: scale; from: 10 10 10; to: 12 12 12; loop: true; dur: 3000"></a-entity>
+    <a-entity position="0 0 0" rotation="0 0 0" scale="10 10 10" gltf-model="#punkalparkeC"
+      animation="property: scale; from: 10 10 10; to: 12 12 12; loop: true; dur: 3000"></a-entity>
 
-    </a-marker>
-    <a-entity camera position="0 0 0"></a-entity>
-  </a-scene>
+  </a-marker>
+  <a-entity camera position="0 0 0"></a-entity>
+</a-scene>
 
   <footer>
     <div class="row legendGroup">
       <div class="col-2"><a href="../gallery.html"><i class="ctrlBtn fa-solid fa-arrow-left"></i></a></div>
       <div class="col-8 command">Escanea el marcador AR</div>
       <div class="col-4 infoFooter legendText" hidden></div>
-      <div class="col-4 songText" hidden></div>
       <div class="col-2"><a href="../about.html"><i class="ctrlBtn fa-solid fa-info"></i></a></div>
     </div>
     <div class="col-12 centerGroup btnGroup">

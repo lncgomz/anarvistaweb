@@ -4,36 +4,38 @@
     padding: 0 4px;
     overflow: auto;
   }
-  
-  /* Create four equal columns that sits next to each other */
-  .column {
-    flex: 25%;
-    max-width: 25%;
-    padding: 0 4px;
+
+  .markers {
+    padding: 0;
+    text-align: center;
+    min-height:100%;
+    position:relative;
   }
-  
-  .column img {
-    margin-top: 8px;
-    vertical-align: middle;
-    width: 100%;
+
+  .markers img {
+    width: 150px !important;
+    height: 150px !important;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
+
+  .clear { clear: both; height: 300px; }
 
   .info {
     font-size: 18px;
   }
-  
-  /* Responsive layout - makes a two column-layout instead of four columns */
-  @media screen and (max-width: 800px) {
-    .column {
-      flex: 50%;
-      max-width: 50%;
-    }
+
+  .body-gallery {
+    border-left-style: solid;
+    border-left-color: white;
+    border-left-width: 20px;
+    border-right-style: solid;
+    border-right-color: white;
+    border-right-width: 20px;
+  }
+
+  .container-gallery {
+    margin-top: 30px;   
   }
   
-  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
-    .column {
-      flex: 100%;
-      max-width: 100%;
-    }
-  }
+  

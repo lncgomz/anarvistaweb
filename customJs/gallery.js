@@ -33,7 +33,8 @@ let names = {
   rdc: 'Ratas de Ciudad',
   fechoria: 'Fechoría Street Punk',
   reciclaje: 'Reciclaje',
-  ppd: 'Presos Por Detenidos'
+  ppd: 'Presos Por Detenidos',
+  carajitosgrandes: 'Carajitos Grandes'
 }
 
 function clicked(tag) {

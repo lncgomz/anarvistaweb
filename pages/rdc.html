@@ -19,6 +19,17 @@
 
 <body style="margin: 0px; overflow: hidden;" onload="retrieveLinks()">
   <span id="links" hidden></span>
+
+
+
+  <header class="header">
+    <div class="row">
+      <div class="col-12 rightGroup info">
+        <div class="songText" hidden></div>
+      </div>
+    </div>
+  </header>
+
   <a-scene embedded vr-mode-ui="enabled: false;"
     arjs='debugUIEnabled: false; sourceType: webcam; sourceWidth:640; sourceHeight:480; displayWidth: 640; displayHeight: 480; '>
     <a-assets>
@@ -28,8 +39,8 @@
       <audio id="rdcAudio" src="../audio/Cementerio.mp3" preload="auto"></audio>
     </a-assets>
 
-    <a-marker position="0 0 0" id="rdc" type="pattern" url="../data/rdc.patt" smoothCount=0
-      smoothTolerance=0.0001 registerevents>
+    <a-marker position="0 0 0" id="rdc" type="pattern" url="../data/rdc.patt" smoothCount=0 smoothTolerance=0.0001
+      registerevents>
 
       <a-entity position="0 0 0" rotation="0 0 0" scale="5 5 5" gltf-model="#rdc"
         sound="src: #rdcAudio; autoplay: false; loop: false"></a-entity>
@@ -49,7 +60,6 @@
       <div class="col-2"><a href="../gallery.html"><i class="ctrlBtn fa-solid fa-arrow-left"></i></a></div>
       <div class="col-8 command">Escanea el marcador AR</div>
       <div class="col-4 infoFooter legendText" hidden></div>
-      <div class="col-4 songText" hidden></div>
       <div class="col-2"><a href="../about.html"><i class="ctrlBtn fa-solid fa-info"></i></a></div>
     </div>
     <div class="col-12 centerGroup btnGroup">
@@ -80,12 +90,7 @@
       <button id="webBtn" hidden="true">
         <i class="fa fa-solid fa-globe"></i>
       </button>
-      <button id="extra1Btn" hidden="true">
-        <i class="fa fa-brands fa-facebook"></i>
-      </button>
-      <button id="extra2Btn" hidden="true">
-        <i class="fa fa-brands fa-youtube"></i>
-      </button>
+    </div>
     </div>
   </footer>
 </body>

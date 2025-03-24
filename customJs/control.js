@@ -55,10 +55,11 @@ AFRAME.registerComponent('registerevents', {
       sietebalazos: '7 Balazos',
       ppj: 'Los PPJ',
       punkalparke: 'Acción Mutante',
-      rdc: 'Ratas de Ciudad feat. Manolo Uvi Commando 9mm',
+      rdc: 'Ratas de Ciudad',
       fechoria: 'Fechoría Street Punk',
       reciclaje: 'Reciclaje',
-      ppd: 'Presos Por Detenidos'
+      ppd: 'Presos Por Detenidos',
+      carajitosgrandes: 'Carajitos Grandes'
     }
 
     let songs = {
@@ -80,7 +81,7 @@ AFRAME.registerComponent('registerevents', {
       perrera: 'La Perrera',
       punqueria: 'La Punquería - El Paria',
       nc: 'Nación Criminal - Correr El Riesgo',
-      katalexia: 'Rompiendo Cadenas',
+      katalexia: 'Katalexia - Rompiendo Cadenas',
       falp: '@patia No - Feria de Cultura Libertaria',
       ldm: 'Los de Menos - Que Asco',
       vinilos: 'The Clash - I Fought the Law',
@@ -88,13 +89,14 @@ AFRAME.registerComponent('registerevents', {
       fanzineroso: 'La Polla Records - Sin País',
       ultrazonido: 'Ultrazonido - Esther',
       tz: 'Tukuca Zakayama - Perorata',
-      sietebalazos: 'Punk y Groserías',
-      ppj: 'El Locutor',
-      punkalparke: 'Chikipodris',
-      rdc: 'Cementerio',
-      fechoria: 'Así Somos',
+      sietebalazos: '7 Balazos - Punk y Groserías',
+      ppj: 'Los PPJ - El Locutor',
+      punkalparke: 'Acción Mutante - Chikipodris',
+      rdc: 'Ratas de Ciudad feat. Manolo Uvi Commando 9mm - Cementerio',
+      fechoria: 'Fechoría - Así Somos',
       reciclaje: 'Reciclaje - Fiel al Punk',
-      ppd: 'Presos Por Detenidos'
+      ppd: 'PPD - Presos Por Detenidos',
+      carajitosgrandes: 'Carajitos Grandes - Valencia es Violencia'
     }
 
     marker.addEventListener('markerFound', function () {
