@@ -59,7 +59,8 @@ AFRAME.registerComponent('registerevents', {
       fechoria: 'Fechoría Street Punk',
       reciclaje: 'Reciclaje',
       ppd: 'Presos Por Detenidos',
-      carajitosgrandes: 'Carajitos Grandes'
+      carajitosgrandes: 'Carajitos Grandes',
+      fechoriaBastards: 'Fechoría Bastards'
     }
 
     let songs = {
@@ -96,7 +97,8 @@ AFRAME.registerComponent('registerevents', {
       fechoria: 'Fechoría - Así Somos',
       reciclaje: 'Reciclaje - Fiel al Punk',
       ppd: 'PPD - Presos Por Detenidos',
-      carajitosgrandes: 'Carajitos Grandes - Valencia es Violencia'
+      carajitosgrandes: 'Carajitos Grandes - Valencia es Violencia',
+      fechoriaBastards: 'Tengo La Razón'
     }
 
     marker.addEventListener('markerFound', function () {

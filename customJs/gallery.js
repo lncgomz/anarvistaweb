@@ -34,7 +34,8 @@ let names = {
   fechoria: 'Fechoría Street Punk',
   reciclaje: 'Reciclaje',
   ppd: 'Presos Por Detenidos',
-  carajitosgrandes: 'Carajitos Grandes'
+  carajitosgrandes: 'Carajitos Grandes',
+  fechoriaBastards: 'Fechoría Bastards'
 }
 
 function clicked(tag) {
