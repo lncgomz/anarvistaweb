@@ -60,7 +60,7 @@ AFRAME.registerComponent('registerevents', {
       reciclaje: 'Reciclaje',
       ppd: 'Presos Por Detenidos',
       carajitosgrandes: 'Carajitos Grandes',
-      fechoriaBastards: 'Fechoría Bastards'
+      fechoriaBastards: "Fechoría's Bastards"
     }
 
     let songs = {
