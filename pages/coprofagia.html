@@ -35,27 +35,30 @@
     >
     <a-assets>
       <a-asset-item id="coprofagia" src="../models/coprofagia.gltf"></a-asset-item>
+      <a-asset-item id="coprofagiaB" src="../models/coprofagia_B.gltf"></a-asset-item>
       <audio id="coprofagiaAudio" src="../audio/brutalDemencia.mp3" preload="auto"></audio>
     </a-assets>
 
     <a-entity camera position="0 0 0"></a-entity>
     <a-marker position="0 0 0" id="coprofagia" type="pattern" url="../data/coprofagia.patt" smoothCount=0
       smoothTolerance=0.0001 registerevents>
-      <a-entity position="0 -1 0" particle-system="
-  texture: ../images/particles/coprofagia.png;
-  color: #000000, #FFFFFF;
-  size: 1, 0;
-  velocityValue: 0.005 0.005 0.005;
-  velocitySpread: 0.5 0 0.5;
-  accelerationValue: 0.005 0.005 0.005;
-  accelerationSpread: 0.005 0.005 0.005;
-  rotationAngle: 0;
-  blending: 1;
-  particleCount: 200;
-  maxAge: 5; "></a-entity>
-      <a-entity position="0 0 0" rotation="0 0 0" scale="14 14 14" gltf-model="#coprofagia"
-        animation="property: rotation; from:0 360 0; to:0 -360 0; loop: true; dur: 5000"
+      <a-entity position="0 0 0" particle-system="
+            texture: ../images/particles/coprofagia.png;
+            color: #000000, #FFFFFF;
+            size: 0, 0.5, 1;
+            velocityValue: 0.005 0.005 0.005;
+            velocitySpread: 0.5 0 0.5; 
+            accelerationValue: 0.005 0.005 0.005;
+            accelerationSpread: 0.005 0.005 0.005;
+            rotationAngle: 0; 
+            blending: 1;
+            particleCount: 20;
+            maxAge: 5; "></a-entity>
+      <a-entity position="0 0 0" rotation="0 0 0" scale="5 5 5" gltf-model="#coprofagia"
+        animation="property: rotation; from: 0 0 -359; to: 0 0 0; loop: true; dur: 4000"
         sound="src: #coprofagiaAudio; autoplay: false; loop: false"></a-entity>
+        <a-entity position="0 0 0" rotation="0 0 0" scale="5 5 5" gltf-model="#coprofagiaB"
+        animation="property: rotation; from: 0 0 360; to: 0 0 0; loop: true; dur: 5000"></a-entity>
     </a-marker>
   </a-scene>
   
