@@ -109,13 +109,13 @@ AFRAME.registerComponent('registerevents', {
 
     marker.addEventListener('markerFound', function () {            
       nft[0].setAttribute('position', '0 0 0');   
-      nft[0].setAttribute('rotation', '0 0 0');    
+      m.setAttribute('rotation', '0 0 0');    
       m.setAttribute('visible', 'true')
     })
 
     marker.addEventListener('markerLost', function () {
       nft[0].setAttribute('position', '0 0 0');
-       nft[0].setAttribute('rotation', '0 0 0');  
+       m.setAttribute('rotation', '0 0 0');  
        m.setAttribute('visible', 'true')
     })
   },
