@@ -107,26 +107,16 @@ AFRAME.registerComponent('registerevents', {
       fechoriaBastards: 'Tengo La Razón'
     }
 
-    marker.addEventListener('markerFound', function () {
-      model.forEach((m) => {
-        if (m.id === marker.id) {
-          m.setAttribute('visible', 'true')
-        } else {
-          m.setAttribute('visible', 'true')
-        }
-      })      
-      nft[0].setAttribute('position', '0 0 0');      
+    marker.addEventListener('markerFound', function () {            
+      nft[0].setAttribute('position', '0 0 0');   
+      nft[0].setAttribute('rotation', '0 0 0');    
+      m.setAttribute('visible', 'true')
     })
 
     marker.addEventListener('markerLost', function () {
       nft[0].setAttribute('position', '0 0 0');
-      model.forEach((m) => {
-        if (m.id === marker.id) {
-          m.setAttribute('visible', 'true')
-        } else {
-          m.setAttribute('visible', 'true')
-        }
-      })      
+       nft[0].setAttribute('rotation', '0 0 0');  
+       m.setAttribute('visible', 'true')
     })
   },
 })
