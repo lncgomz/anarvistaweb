@@ -47,6 +47,10 @@
   <a-scene  style="display:flex; justify-content: center; align-items: center;" vr-mode-ui="enabled: true;" renderer="logarithmicDepthBuffer: true;" embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: true;">
 
+        <a-assets>
+      <a-asset-item id="odio" src="../models/odio.gltf"></a-asset-item>
+    </a-assets>
+
     <!-- a-nft is the anchor that defines an Image Tracking entity -->
     <!-- on 'url' use the path to the Image Descriptors created before. -->
     <!-- the path should end with the name without the extension e.g. if file is trex.fset' the path should end with trex -->
@@ -58,11 +62,9 @@
       <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
       <!-- <a-entity layout="type: flex; align: middle center" gltf-model="../models/anarvista.gltf" scale="400 400 400" position="100 150 0"></a-entity> -->
       <!-- you can also add a text entity to show some information -->
-      <a-entity gltf-model="../models/coprofagia.gltf"
-        scale="20 20 20" position="0 0 0" visible="true"></a-entity>
-        <a-entity gltf-model="../models/coprofagia_B.gltf"
-        scale="20 20 20" position="0 0 0" visible="true"></a-entity>
-
+      <!-- <a-entity gltf-model="../models/odio.gltf" scale="20 20 20" position="0 0 0" visible="true"></a-entity> -->
+        <!-- <a-entity gltf-model="../models/coprofagia_B.gltf" scale="20 20 20" position="0 0 0" visible="true"></a-entity> -->
+         <a-entity position="0 0 0" rotation="0 0 0" scale="12 12 12" gltf-model="#odio"></a-entity>
     </a-nft>
     <a-entity camera look-controls wasd-controls position="0 0 0"></a-entity>
     <!-- static camera that moves according to the device movemenents -->
