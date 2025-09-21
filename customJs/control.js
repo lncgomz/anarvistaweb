@@ -101,6 +101,15 @@ AFRAME.registerComponent('registerevents', {
       fechoriaBastards: 'Tengo La Razón'
     }
 
+    navigator.mediaDevices
+  .getUserMedia({ audio: true, video: true })
+  .then((mediaStream) => {
+    // var doc = document.querySelector("video");
+    // document.querySelector("video").srcObject = mediaStream;
+
+    mediaStream.getTracks().forEach(track => track.stop());
+  });
+
     marker.addEventListener('markerFound', function () {
       marker.emit('detectedEvent');
       const entityTag = `#${marker.id}`;
