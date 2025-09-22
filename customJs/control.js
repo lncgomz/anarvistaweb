@@ -8,11 +8,8 @@ function retrieveLinks() {
 
 function clearAllCams() {
   navigator.mediaDevices
-  .getUserMedia({ audio: false, video: true })
+  .getUserMedia({ video: true })
   .then((mediaStream) => {
-    // var doc = document.querySelector("video");
-    // document.querySelector("video").srcObject = mediaStream;
-
     mediaStream.getTracks().forEach(track => track.stop());
   });
 }

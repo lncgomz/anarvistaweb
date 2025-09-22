@@ -29,8 +29,11 @@
     </div>
   </header>
 
-  <a-scene embedded vr-mode-ui="enabled: false;"
-    arjs='debugUIEnabled: false; sourceType: webcam; sourceWidth:640; sourceHeight:480; displayWidth: 640; displayHeight: 480; '>
+  <!-- <a-scene embedded vr-mode-ui="enabled: false;"
+    arjs='debugUIEnabled: false; sourceType: webcam; sourceWidth:640; sourceHeight:480; displayWidth: 640; displayHeight: 480; '> -->
+    <a-scene  style="display:flex; justify-content: center; align-items: center;" vr-mode-ui="enabled: true;" renderer="logarithmicDepthBuffer: true;" embedded
+    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: true;">
+    
     <a-assets>
       <a-asset-item id="anarvista" src="../models/anarvista.gltf"></a-asset-item>
       
