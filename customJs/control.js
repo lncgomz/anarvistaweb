@@ -6,6 +6,17 @@ function retrieveLinks() {
     });
 }
 
+function clearAllCams() {
+  navigator.mediaDevices
+  .getUserMedia({ audio: false, video: true })
+  .then((mediaStream) => {
+    // var doc = document.querySelector("video");
+    // document.querySelector("video").srcObject = mediaStream;
+
+    mediaStream.getTracks().forEach(track => track.stop());
+  });
+}
+
 AFRAME.registerComponent('scenecontroller', {
   tick: function (time, timeDelta) {
     
@@ -99,16 +110,7 @@ AFRAME.registerComponent('registerevents', {
       ppd: 'PPD - Presos Por Detenidos',
       carajitosgrandes: 'Carajitos Grandes - Valencia es Violencia',
       fechoriaBastards: 'Tengo La Razón'
-    }
-
-    navigator.mediaDevices
-  .getUserMedia({ audio: true, video: true })
-  .then((mediaStream) => {
-    // var doc = document.querySelector("video");
-    // document.querySelector("video").srcObject = mediaStream;
-
-    mediaStream.getTracks().forEach(track => track.stop());
-  });
+    }    
 
     marker.addEventListener('markerFound', function () {
       marker.emit('detectedEvent');
