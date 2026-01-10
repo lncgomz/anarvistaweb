@@ -6,14 +6,6 @@ function retrieveLinks() {
     });
 }
 
-function clearAllCams() {
-  navigator.mediaDevices
-  .getUserMedia({ video: true })
-  .then((mediaStream) => {
-    mediaStream.getTracks().forEach(track => track.stop());
-  });
-}
-
 AFRAME.registerComponent('scenecontroller', {
   tick: function (time, timeDelta) {
     
@@ -67,8 +59,7 @@ AFRAME.registerComponent('registerevents', {
       fechoria: 'Fechoría Street Punk',
       reciclaje: 'Reciclaje',
       ppd: 'Presos Por Detenidos',
-      carajitosgrandes: 'Carajitos Grandes',
-      fechoriaBastards: "Fechoría's Bastards"
+      carajitosgrandes: 'Carajitos Grandes'
     }
 
     let songs = {
@@ -105,15 +96,14 @@ AFRAME.registerComponent('registerevents', {
       fechoria: 'Fechoría - Así Somos',
       reciclaje: 'Reciclaje - Fiel al Punk',
       ppd: 'PPD - Presos Por Detenidos',
-      carajitosgrandes: 'Carajitos Grandes - Valencia es Violencia',
-      fechoriaBastards: 'Tengo La Razón'
-    }    
+      carajitosgrandes: 'Carajitos Grandes - Valencia es Violencia'
+    }
 
     marker.addEventListener('markerFound', function () {
       marker.emit('detectedEvent');
       const entityTag = `#${marker.id}`;
-      let cmd = document.getElementsByClassName('command')[0];
-      cmd.setAttribute('hidden', 'true');
+      // let cmd = document.getElementsByClassName('command')[0];
+      // cmd.setAttribute('hidden', 'true');
       let links = document.getElementById('links').value
       if (links) {
         marker.removeAttribute('hidden')
@@ -135,9 +125,9 @@ AFRAME.registerComponent('registerevents', {
     })
 
     marker.addEventListener('markerLost', function () {
-      document.getElementsByClassName('legendText')[0].setAttribute('hidden', 'true')
+      // document.getElementsByClassName('legendText')[0].setAttribute('hidden', 'true')
       document.getElementsByClassName('songText')[0].setAttribute('hidden', 'true')
-      document.getElementsByClassName('command')[0].removeAttribute('hidden');
+      // document.getElementsByClassName('command')[0].removeAttribute('hidden');
       const entityTag = `#${marker.id}`
       const filteredSound = sounds.filter(
         (s) => s.components['gltf-model'].attrValue === entityTag,
@@ -151,7 +141,7 @@ AFRAME.registerComponent('registerevents', {
 })
 
 function processButtons(btnArray, currentLinks, marker, names, songs) {
-  document.getElementsByClassName('legendText')[0].removeAttribute('hidden')
+  // document.getElementsByClassName('legendText')[0].removeAttribute('hidden')
   document.getElementsByClassName('songText')[0].removeAttribute('hidden')
   document.getElementsByClassName('legendText')[0].textContent = names[marker]
   document.getElementsByClassName('songText')[0].textContent = songs[marker]
@@ -165,8 +155,8 @@ function processButtons(btnArray, currentLinks, marker, names, songs) {
       btn.removeAttribute('hidden')
       btn.setAttribute('onclick', `location.href='${currentLinks[btnLabel]}';`)
     } else {
-      btn.removeAttribute('href')
-      btn.setAttribute('hidden', 'true')
+      // btn.removeAttribute('href')
+      // btn.setAttribute('hidden', 'true')
     }
   })
 }

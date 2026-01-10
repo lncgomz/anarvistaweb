@@ -13,12 +13,51 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/customFonts.css" />
+    <link rel="stylesheet" href="css/gallery.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <style>
+      .about-content {
+        padding: 90px 20px 80px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      
+      .about-section {
+        margin-bottom: 40px;
+        text-align: center;
+      }
+      
+      .about-section h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      
+      .about-section a {
+        color: white;
+        text-decoration: underline;
+      }
+      
+      .about-message {
+        text-align: center;
+      }
+      
+      .about-message .mainMsg {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 30px;
+      }
+      
+      .about-message .highlight {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    </style>
     <script
       src="https://kit.fontawesome.com/a927a7050d.js"
       crossorigin="anonymous"
@@ -29,32 +68,41 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body style="background-color: white; color: black;">
     <div class="container">
-      <div class="frame">
-        <div class="centerGroup">
-          <div class="logo">
-            <img src="images/logo.png" />
-          </div>
-          <div>AnARvista Web</div>
-          <div>
-            Hecho con amor por
-            <a href="https://github.com/lncgomz/anarvistaweb">Leo</a>
-          </div>
+      <header class="gallery-header">
+        <div class="header-content">
+          <img src="images/logo.png" alt="AnARvista Logo" class="logo-icon">
+          <h1>AnARvista</h1>
+          <a href="https://www.instagram.com/anarvista/" target="_blank" class="instagram-link">
+            <i class="fab fa-instagram"></i>
+          </a>
         </div>
-        <div class="msg">
+      </header>
+
+      <div class="about-content">
+        <div class="about-section">
+          <h2>AnARvista Web</h2>
+          <p>
+            Hecho con amor por
+            <a class="hyperlink" href="https://github.com/lncgomz/anarvistaweb" target="_blank">Sennaciisto</a>
+          </p>
+        </div>
+        
+        <div class="about-message">
           <p class="mainMsg">
             El contenido de este software no está protegido por ningún monopolio
             tecnológico o comercial; ha sido diseñado bajo el esquema de
             software libre. Nadie le va a culpar, a multar o a encarcelar por
             difundir, modificar o compartir esta página.
           </p>
-          <p>Piratea y Difunde.</p>
+          <p class="highlight">Piratea y Difunde.</p>
         </div>
       </div>
-      <footer class="row footer">
-        <div class="col-12 centerGroup">
-          <button id="return" onclick="location.href='./index.html';">
+
+      <footer class="gallery-footer">
+        <div class="footer-content">
+          <button id="return" onclick="location.href='./gallery.html';">
             <i class="fa-solid fa-hand-back-fist"></i>
           </button>
         </div>

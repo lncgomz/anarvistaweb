@@ -1,41 +1,215 @@
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 4px;
-    overflow: auto;
+  display: block;
+  padding: 0;
+  position: fixed;
+  top: 90px;
+  bottom: 80px;
+  left: 20px;
+  right: 20px;
+  width: calc(100% - 40px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.markers {
+  padding: 20px 0;
+  margin-top: 30px;
+  margin-bottom: 80px;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  overflow-y: scroll;
+}
+
+.markers img {
+  width: 150px !important;
+  height: 150px !important;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.markers img:hover {
+  transform: scale(1.05);
+}
+
+.clear {
+  clear: both;
+}
+
+.info {
+  font-size: 18px;
+}
+
+.body-gallery {
+  border-left-style: solid;
+  border-left-color: white;
+  border-left-width: 20px;
+  border-right-style: solid;
+  border-right-color: white;
+  border-right-width: 20px;
+}
+
+.container-gallery {
+  margin-top: 30px;
+}
+
+/* New Gallery Header Styles */
+.gallery-header {
+  position: fixed;
+  top: 0;
+  /* left: 20px;
+  right: 20px;
+  width: calc(100% - 40px); */
+  width: 100%;
+  background-color: white;
+  color: black;
+  border-bottom: 2px solid black;
+  z-index: 1000;
+  padding: 15px 20px;
+  height: 70px;
+}
+
+.gallery-header .header-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-header .logo-icon {
+  position: absolute;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  /* border-radius: 50%; */
+  background-color: black;
+  object-fit: contain;
+  filter: invert(1);
+  box-sizing: border-box;
+}
+
+.gallery-header h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
+
+.gallery-header .instagram-link {
+  position: absolute;
+  right: 0;
+  color: black;
+  font-size: 28px;
+  transition: color 0.3s ease;
+}
+
+.gallery-header .instagram-link:hover {
+  color: #e4405f;
+}
+
+/* New Gallery Footer Styles */
+.gallery-footer {
+  position: fixed;
+  bottom: 0;
+  /* left: 20px;
+  right: 20px;
+  width: calc(100% - 40px); */
+  width: 100%;
+  background-color: white;
+  color: black;
+  border-top: 2px solid black;
+  padding: 8px 20px;
+  z-index: 1000;
+}
+
+.gallery-footer .footer-content {
+  text-align: center;
+}
+
+.gallery-footer p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+/* Adjust body padding to account for fixed header and footer */
+body.body-gallery {
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .row {
+    top: 80px;
+    bottom: 70px;
   }
 
   .markers {
-    padding: 0;
-    text-align: center;
-    min-height:100%;
-    position:relative;
+    gap: 8px;
   }
 
   .markers img {
-    width: 150px !important;
-    height: 150px !important;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    width: 120px !important;
+    height: 120px !important;
   }
 
-  .clear { clear: both; height: 300px; }
+  .gallery-header .logo-icon {
+    width: 58px;
+    height: 58px;
+    padding: 10px;
+  }
 
-  .info {
+  .gallery-header h1 {
+    font-size: 22px;
+  }
+
+  .gallery-header .instagram-link {
+    font-size: 24px;
+  }
+
+  .gallery-footer p {
+    font-size: 16px;
+  }
+
+  body.body-gallery {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .markers {
+    gap: 5px;
+  }
+
+  .markers img {
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  .gallery-header .logo-icon {
+    width: 48px;
+    height: 48px;
+    padding: 8px;
+  }
+
+  .gallery-header h1 {
     font-size: 18px;
   }
 
-  .body-gallery {
-    border-left-style: solid;
-    border-left-color: white;
-    border-left-width: 20px;
-    border-right-style: solid;
-    border-right-color: white;
-    border-right-width: 20px;
+  .gallery-header .instagram-link {
+    font-size: 20px;
   }
 
-  .container-gallery {
-    margin-top: 30px;   
+  .gallery-footer p {
+    font-size: 14px;
   }
-  
-  
+}

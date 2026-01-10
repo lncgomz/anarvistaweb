@@ -16,17 +16,51 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
 <script src="../customJs/control.js"></script>
+<script>
+  // Handle marker found/lost events
+  document.addEventListener('DOMContentLoaded', function() {
+    const marker = document.querySelector('a-marker');
+    const header = document.querySelector('header');
+    const footer = document.querySelector('footer');
+    const scanIndicator = document.getElementById('scan-indicator');
+    
+    if (marker) {
+      marker.addEventListener('markerFound', function() {
+        console.log('Marker found');
+        if (header) header.classList.add('visible');
+        // Footer always visible
+        if (scanIndicator) scanIndicator.classList.remove('visible');
+      });
+      
+      marker.addEventListener('markerLost', function() {
+        console.log('Marker lost');
+        if (header) header.classList.remove('visible');
+        // Footer always visible
+        if (scanIndicator) scanIndicator.classList.add('visible');
+      });
+    }
+  });
+</script>
 
 <body style="margin: 0px; overflow: hidden;" onload="retrieveLinks()">
   <span id="links" hidden></span>
 
   <header class="header">
-    <div class="row">
-      <div class="col-12 rightGroup info">
-        <div class="songText" hidden></div>
+    <div class="header-content">
+      <div class="song-info">
+        <i class="fas fa-music"></i>
+        <span class="song-text songText"></span>
+      </div>
+      <div>
+        <h2 class="project-name legendText"></h2>
       </div>
     </div>
   </header>
+
+  <div id="scan-indicator" class="scan-indicator visible">
+    <div class="scan-message">Escanea el código AR</div>
+    <div class="scan-square"></div>
+  </div>
 
   <a-scene embedded vr-mode-ui="enabled: false;"
     arjs='debugUIEnabled: false; sourceType: webcam; sourceWidth:640; sourceHeight:480; displayWidth: 640; displayHeight: 480; '>
@@ -55,15 +89,9 @@
     <a-entity camera position="0 0 0"></a-entity>
   </a-scene>
 
-  <footer>
-    <div class="row legendGroup">
-      <div class="col-2"><a href="../gallery.html"><i class="ctrlBtn fa-solid fa-arrow-left"></i></a></div>
-      <div class="col-8 command">Escanea el marcador AR</div>
-      <div class="col-4 infoFooter legendText" hidden></div>
-      <div class="col-2"><a href="../about.html"><i class="ctrlBtn fa-solid fa-info"></i></a></div>
-    </div>
-    <div class="col-12 centerGroup btnGroup">
-      <button id="facebookBtn" hidden="true">
+  <footer class="footer">
+    <div class="social-icons">
+       <button id="facebookBtn" hidden="true">
         <i class="fa fa-brands fa-facebook"></i>
       </button>
       <button id="instagramBtn" hidden="true">
@@ -90,7 +118,15 @@
       <button id="webBtn" hidden="true">
         <i class="fa fa-solid fa-globe"></i>
       </button>
-    </div>
+      <button id="webBtn" hidden="true">
+        <i class="fa fa-solid fa-globe"></i>
+      </button>
+      <button id="galleryBtn" onclick="location.href='../gallery.html'">
+        <i class="fa fa-solid fa-arrow-left"></i>
+      </button>
+      <button id="aboutBtn" onclick="location.href='../about.html'">
+        <i class="fa fa-solid fa-info"></i>
+      </button>
     </div>
   </footer>
 </body>
