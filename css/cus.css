@@ -40,6 +40,7 @@ header.visible {
 }
 
 .song-info .song-text {
+  max-width: 80%;
   white-space: nowrap;
   overflow: hidden;
   white-space: nowrap;
@@ -285,7 +286,7 @@ button:active {
   }
 
   .song-info .song-text {
-    max-width: 250px;
+    max-width: 80%;
   }
 
   .social-icon {
@@ -327,7 +328,7 @@ button:active {
   }
 
   .song-info .song-text {
-    max-width: 200px;
+    max-width: 80%;
   }
 
   footer {
