@@ -28,12 +28,6 @@
             "doubleSided" : true,
             "name" : "SVGMat.003",
             "pbrMetallicRoughness" : {
-                "baseColorFactor" : [
-                    0.39675524830818176,
-                    0.4125427305698395,
-                    0.4677838683128357,
-                    1
-                ],
                 "metallicFactor" : 0.5,
                 "roughnessFactor" : 0.4000000059604645
             }
