@@ -35,7 +35,8 @@ let names = {
   reciclaje: 'Reciclaje',
   ppd: 'Presos Por Detenidos',
   carajitosgrandes: 'Carajitos Grandes',
-  personalYisus: 'Personal Yisus'
+  personalYisus: 'Personal Yisus',
+  impuriox: "Impuriox Punk Rock"
 }
 
 function clicked(tag) {

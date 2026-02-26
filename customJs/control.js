@@ -60,7 +60,8 @@ AFRAME.registerComponent('registerevents', {
       reciclaje: 'Reciclaje',
       ppd: 'Presos Por Detenidos',
       carajitosgrandes: 'Carajitos Grandes',
-      personalYisus: 'Personal Yisus'
+      personalYisus: 'Personal Yisus',
+      impuriox: "Impuriox Punk Rock"
     }
 
     let songs = {
@@ -98,14 +99,13 @@ AFRAME.registerComponent('registerevents', {
       reciclaje: 'Reciclaje - Fiel al Punk',
       ppd: 'PPD - Presos Por Detenidos',
       carajitosgrandes: 'Carajitos Grandes - Valencia es Violencia',
-      personalYisus: 'Personal Yisus - Ataque Frontal'
+      personalYisus: 'Personal Yisus - Ataque Frontal',
+      impuriox: "Impuriox - No Quiero Ser Un Asesino"
     }
 
     marker.addEventListener('markerFound', function () {
       marker.emit('detectedEvent');
       const entityTag = `#${marker.id}`;
-      // let cmd = document.getElementsByClassName('command')[0];
-      // cmd.setAttribute('hidden', 'true');
       let links = document.getElementById('links').value
       if (links) {
         marker.removeAttribute('hidden')
@@ -127,9 +127,7 @@ AFRAME.registerComponent('registerevents', {
     })
 
     marker.addEventListener('markerLost', function () {
-      // document.getElementsByClassName('legendText')[0].setAttribute('hidden', 'true')
       document.getElementsByClassName('songText')[0].setAttribute('hidden', 'true')
-      // document.getElementsByClassName('command')[0].removeAttribute('hidden');
       const entityTag = `#${marker.id}`
       const filteredSound = sounds.filter(
         (s) => s.components['gltf-model'].attrValue === entityTag,
@@ -143,7 +141,6 @@ AFRAME.registerComponent('registerevents', {
 })
 
 function processButtons(btnArray, currentLinks, marker, names, songs) {
-  // document.getElementsByClassName('legendText')[0].removeAttribute('hidden')
   document.getElementsByClassName('songText')[0].removeAttribute('hidden')
   document.getElementsByClassName('legendText')[0].textContent = names[marker]
   document.getElementsByClassName('songText')[0].textContent = songs[marker]
@@ -156,9 +153,6 @@ function processButtons(btnArray, currentLinks, marker, names, songs) {
     if (currentLinks[btnLabel] !== undefined) {
       btn.removeAttribute('hidden')
       btn.setAttribute('onclick', `location.href='${currentLinks[btnLabel]}';`)
-    } else {
-      // btn.removeAttribute('href')
-      // btn.setAttribute('hidden', 'true')
-    }
+    } 
   })
 }
