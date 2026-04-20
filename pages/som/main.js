@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
     || window.innerWidth <= 900;
   const modelPath = isMobileDevice
-    ? '../../models/somT.gltf'
+    ? '../../assets/models/sxoxm/sxoxm.gltf'
     : '../../assets/models/sxoxm/sxoxm.gltf';
 
   const isVisible = (element) => {
