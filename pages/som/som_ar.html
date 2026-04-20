@@ -1,0 +1,221 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../../libs/mindar/mindar-image-three.prod.js"></script>
+  <script src="./main.js" type="module"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../../css/customFonts.css">
+  <style>
+    html,
+    body {
+      position: relative;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+
+    #loading-overlay {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at center, rgba(35, 35, 35, 0.72) 0%, rgba(0, 0, 0, 0.88) 100%);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    #loading-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .loading-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      padding: 28px 34px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+    }
+
+    .spinner {
+      border: 4px solid rgba(255, 255, 255, 0.18);
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      border-left-color: #fff;
+      border-top-color: #8ef0ff;
+      animation: spin 1s linear infinite;
+      box-shadow: 0 0 24px rgba(142, 240, 255, 0.28);
+    }
+
+    .loading-text {
+      font-family: "XTypewriter-Regular", sans-serif;
+      font-size: 28px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: 0 0 12px rgba(142, 240, 255, 0.45);
+    }
+
+    .loading-dots::after {
+      content: "";
+      display: inline-block;
+      width: 1.4em;
+      text-align: left;
+      animation: dots 1.4s steps(4, end) infinite;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes dots {
+      0% { content: ""; }
+      25% { content: "."; }
+      50% { content: ".."; }
+      75% { content: "..."; }
+      100% { content: ""; }
+    }
+
+    #ar-container {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    #ar-container video,
+    #ar-container canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .footer {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 16px;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(8px);
+      z-index: 20;
+      box-shadow: 0 -8px 25px rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-brand {
+      justify-self: start;
+      font-family: "XTypewriter-Regular", sans-serif;
+      font-size: 22px;
+      letter-spacing: 0.14em;
+      color: #fff;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .footer-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .footer-logo {
+      justify-self: end;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 0;
+      overflow: hidden;
+      border: none;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .footer-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      border: 2px solid white;
+      border-radius: 50%;
+      background: black;
+      color: white;
+      cursor: pointer;
+    }
+
+    .social-btn i {
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="ar-container"></div>
+
+  <div id="loading-overlay" aria-label="Loading">
+    <div class="loading-card">
+      <div class="spinner" aria-hidden="true"></div>
+      <div class="loading-text">Cargando<span class="loading-dots"></span></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-brand">SxOxM</div>
+
+    <div class="footer-actions">
+      <button id="capture" class="social-btn" aria-label="Captura">
+        <i class="fa-solid fa-image"></i>
+      </button>
+      <button class="social-btn" aria-label="Instagram"
+      onclick="location.href='https://www.instagram.com/sxoxmpunk/'">
+        <i class="fa-brands fa-instagram"></i>
+      </button>
+      <button class="social-btn" aria-label="Facebook"
+      onclick="location.href='https://www.facebook.com/sxoxmpunkhc/'">
+        <i class="fa-brands fa-facebook-f"></i>
+      </button>
+      <button class="social-btn" aria-label="YouTube"
+      onclick="location.href='https://www.youtube.com/@SolucionoMuerte'">
+        <i class="fa-brands fa-youtube"></i>
+      </button>
+    </div>
+
+    <div class="footer-logo" aria-label="Anarvista logo">
+      <img src="../../images/logo.png" alt="Anarvista logo">
+    </div>
+  </footer>
+</body>
+</html>
