@@ -45,11 +45,17 @@ document.addEventListener('DOMContentLoaded', () => {
     return !element.classList.contains('hidden') && styles.display !== 'none' && styles.visibility !== 'hidden' && styles.opacity !== '0';
   };
 
-  const hideLoaderWhenScanningReady = () => {
+  const hideLoaderWhenScanningReady = (onReady) => {
+    let readyTriggered = false;
+
     const checkOverlay = () => {
       const scanningOverlay = document.querySelector('.mindar-ui-overlay.mindar-ui-scanning');
       if (isVisible(scanningOverlay)) {
         loadingOverlay?.classList.add('hidden');
+        if (!readyTriggered) {
+          readyTriggered = true;
+          onReady?.();
+        }
         return true;
       }
       return false;
@@ -113,35 +119,41 @@ document.addEventListener('DOMContentLoaded', () => {
       video.style.background = 'transparent';
     }
 
-    hideLoaderWhenScanningReady();
+    const loadModel = () => {
+      if (gltf) return;
 
-    loadGLTF(modelPath).then((loadedGltf) => {
-      gltf = loadedGltf;
-      gltf.scene.scale.set(0.5, 0.5, 0.5);
-      gltf.scene.position.set(0, 0, 0);
+      loadGLTF(modelPath).then((loadedGltf) => {
+        gltf = loadedGltf;
+        gltf.scene.scale.set(0.5, 0.5, 0.5);
+        gltf.scene.position.set(0, 0, 0);
 
-      gltf.scene.traverse((obj) => {
-        if (!obj.isMesh || !obj.material) return;
-        const materials = Array.isArray(obj.material) ? obj.material : [obj.material];
-        materials.forEach((mat) => {
-          if (mat.map) mat.map.encoding = THREE.sRGBEncoding;
-          if (mat.isMeshStandardMaterial && !mat.envMap) {
-            mat.metalness = Math.min(mat.metalness ?? 0, 0.2);
-            mat.roughness = Math.max(mat.roughness ?? 1, 0.6);
-          }
-          mat.needsUpdate = true;
+        gltf.scene.traverse((obj) => {
+          if (!obj.isMesh || !obj.material) return;
+          const materials = Array.isArray(obj.material) ? obj.material : [obj.material];
+          materials.forEach((mat) => {
+            if (mat.map) mat.map.encoding = THREE.sRGBEncoding;
+            if (mat.isMeshStandardMaterial && !mat.envMap) {
+              mat.metalness = Math.min(mat.metalness ?? 0, 0.2);
+              mat.roughness = Math.max(mat.roughness ?? 1, 0.6);
+            }
+            mat.needsUpdate = true;
+          });
         });
+
+        anchor.group.add(gltf.scene);
+
+        if (gltf.animations?.length) {
+          mixer = new THREE.AnimationMixer(gltf.scene);
+          const action = mixer.clipAction(gltf.animations[0]);
+          action.play();
+        }
+      }).catch((error) => {
+        console.error('Failed to load model:', error);
       });
+    };
 
-      anchor.group.add(gltf.scene);
-
-      if (gltf.animations?.length) {
-        mixer = new THREE.AnimationMixer(gltf.scene);
-        const action = mixer.clipAction(gltf.animations[0]);
-        action.play();
-      }
-    }).catch((error) => {
-      console.error('Failed to load model:', error);
+    hideLoaderWhenScanningReady(() => {
+      loadModel();
     });
 
     renderer.setAnimationLoop(() => {
