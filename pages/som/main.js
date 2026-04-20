@@ -32,7 +32,7 @@ const capture = (mindarThree) => {
 document.addEventListener('DOMContentLoaded', () => {
   const loadingOverlay = document.querySelector('#loading-overlay');
   const arContainer = document.querySelector('#ar-container');
-  const modelPath = '../../assets/models/sxoxm/sxoxm.gltf';
+  const modelPath = '../../assets/models/sxoxm/scene.gltf';
 
   const isVisible = (element) => {
     if (!element) return false;
