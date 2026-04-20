@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const light = new THREE.HemisphereLight( 0xffffff, 0xbbbbff, 1 );
     scene.add(light);
 
-    const gltf = await loadGLTF('../../models/som.gltf');
+    const gltf = await loadGLTF('../../models/dw.gltf');
     gltf.scene.scale.set(5, 5, 5);
     gltf.scene.position.set(0, 1, 0);
 
