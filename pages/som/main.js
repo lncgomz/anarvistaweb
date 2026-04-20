@@ -32,11 +32,7 @@ const capture = (mindarThree) => {
 document.addEventListener('DOMContentLoaded', () => {
   const loadingOverlay = document.querySelector('#loading-overlay');
   const arContainer = document.querySelector('#ar-container');
-  const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-    || window.innerWidth <= 900;
-  const modelPath = isMobileDevice
-    ? '../../assets/models/sxoxm/sxoxm.gltf'
-    : '../../assets/models/sxoxm/sxoxm.gltf';
+  const modelPath = '../../assets/models/sxoxm/sxoxm.gltf';
 
   const isVisible = (element) => {
     if (!element) return false;
@@ -116,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
         finish();
         observer.disconnect();
       }
-    }, isMobileDevice ? 3000 : 1800);
+    }, 2000);
   };
 
   const start = async () => {
@@ -130,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const { renderer, scene, camera } = mindarThree;
 
     renderer.setClearColor(0x000000, 0);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isMobileDevice ? 1.2 : 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.domElement.style.background = 'transparent';
     renderer.domElement.style.zIndex = '2';
 
@@ -162,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       loadGLTF(modelPath).then((loadedGltf) => {
         gltf = loadedGltf;
-        gltf.scene.scale.set(0.5, 0.5, 0.5);
+        gltf.scene.scale.set(10, 10, 10);
         gltf.scene.position.set(0, 0, 0);
 
         gltf.scene.traverse((obj) => {
