@@ -89,31 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
     fillLight.position.set(-0.7, 0.5, -0.4);
     scene.add(hemiLight, keyLight, fillLight);
 
-    const gltf = await loadGLTF('../../assets/models/sxoxm/sxoxm.gltf');
-    gltf.scene.scale.set(0.5, 0.5, 0.5);
-    gltf.scene.position.set(0, 0, 0);
-
-    gltf.scene.traverse((obj) => {
-      if (!obj.isMesh || !obj.material) return;
-      const materials = Array.isArray(obj.material) ? obj.material : [obj.material];
-      materials.forEach((mat) => {
-        if (mat.map) mat.map.encoding = THREE.sRGBEncoding;
-        if (mat.isMeshStandardMaterial && !mat.envMap) {
-          mat.metalness = Math.min(mat.metalness ?? 0, 0.2);
-          mat.roughness = Math.max(mat.roughness ?? 1, 0.6);
-        }
-        mat.needsUpdate = true;
-      });
-    });
-
     const anchor = mindarThree.addAnchor(0);
-    anchor.group.add(gltf.scene);
-
-    const mixer = new THREE.AnimationMixer(gltf.scene);
-    const action = mixer.clipAction(gltf.animations[0]);
-    action.play();
-
     const clock = new THREE.Clock();
+    let gltf = null;
+    let mixer = null;
 
     document.querySelector("#capture").addEventListener("click", () => {
       capture(mindarThree);
@@ -130,11 +109,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
     hideLoaderWhenScanningReady();
 
+    loadGLTF('../../assets/models/sxoxm/sxoxm.gltf').then((loadedGltf) => {
+      gltf = loadedGltf;
+      gltf.scene.scale.set(0.5, 0.5, 0.5);
+      gltf.scene.position.set(0, 0, 0);
+
+      gltf.scene.traverse((obj) => {
+        if (!obj.isMesh || !obj.material) return;
+        const materials = Array.isArray(obj.material) ? obj.material : [obj.material];
+        materials.forEach((mat) => {
+          if (mat.map) mat.map.encoding = THREE.sRGBEncoding;
+          if (mat.isMeshStandardMaterial && !mat.envMap) {
+            mat.metalness = Math.min(mat.metalness ?? 0, 0.2);
+            mat.roughness = Math.max(mat.roughness ?? 1, 0.6);
+          }
+          mat.needsUpdate = true;
+        });
+      });
+
+      anchor.group.add(gltf.scene);
+
+      if (gltf.animations?.length) {
+        mixer = new THREE.AnimationMixer(gltf.scene);
+        const action = mixer.clipAction(gltf.animations[0]);
+        action.play();
+      }
+    }).catch((error) => {
+      console.error('Failed to load model:', error);
+    });
+
     renderer.setAnimationLoop(() => {
       const delta = clock.getDelta();
-      gltf.scene.rotation.set(0, gltf.scene.rotation.y + delta, 0);
-      mixer.update(delta);
-      renderer.render(scene, camera);     
+
+      if (gltf) {
+        gltf.scene.rotation.y += delta;
+        mixer?.update(delta);
+      }
+
+      renderer.render(scene, camera);
     });
   }
 
