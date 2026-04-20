@@ -1,5 +1,4 @@
 import { loadGLTF } from "../../libs/loader.js";
-const THREE = window.MINDAR.IMAGE.THREE;
 
 const capture = (mindarThree) => {
   const { video, renderer, scene, camera } = mindarThree;
@@ -45,19 +44,55 @@ document.addEventListener('DOMContentLoaded', () => {
     return !element.classList.contains('hidden') && styles.display !== 'none' && styles.visibility !== 'hidden' && styles.opacity !== '0';
   };
 
+  const waitForMindAR = (timeout = 15000) => new Promise((resolve, reject) => {
+    const startTime = Date.now();
+
+    const check = () => {
+      const threeInstance = window.MINDAR?.IMAGE?.THREE;
+      if (threeInstance) {
+        resolve(threeInstance);
+        return;
+      }
+
+      if (Date.now() - startTime > timeout) {
+        reject(new Error('MindAR library did not finish loading in time.'));
+        return;
+      }
+
+      window.requestAnimationFrame(check);
+    };
+
+    check();
+  });
+
   const hideLoaderWhenScanningReady = (onReady) => {
     let readyTriggered = false;
 
+    const finish = () => {
+      if (readyTriggered) return true;
+      readyTriggered = true;
+      loadingOverlay?.classList.add('hidden');
+      onReady?.();
+      return true;
+    };
+
     const checkOverlay = () => {
       const scanningOverlay = document.querySelector('.mindar-ui-overlay.mindar-ui-scanning');
-      if (isVisible(scanningOverlay)) {
-        loadingOverlay?.classList.add('hidden');
-        if (!readyTriggered) {
-          readyTriggered = true;
-          onReady?.();
-        }
-        return true;
+      const video = arContainer?.querySelector('video');
+      const videoReady = !!video && video.readyState >= 2 && video.videoWidth > 0;
+
+      if (videoReady) {
+        video.setAttribute('playsinline', '');
+        video.style.zIndex = '1';
+        video.style.objectFit = 'cover';
+        video.style.background = 'transparent';
+        video.play?.().catch(() => {});
       }
+
+      if (isVisible(scanningOverlay) || videoReady) {
+        return finish();
+      }
+
       return false;
     };
 
@@ -75,12 +110,22 @@ document.addEventListener('DOMContentLoaded', () => {
       attributes: true,
       attributeFilter: ['class', 'style'],
     });
+
+    window.setTimeout(() => {
+      if (!readyTriggered) {
+        finish();
+        observer.disconnect();
+      }
+    }, isMobileDevice ? 3000 : 1800);
   };
 
   const start = async () => {
+    const THREE = await waitForMindAR();
+
     const mindarThree = new window.MINDAR.IMAGE.MindARThree({
       container: arContainer,
       imageTargetSrc: '../../assets/targets/sxoxm.mind',
+      maxTrack: 1,
     });
     const { renderer, scene, camera } = mindarThree;
 
@@ -111,13 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     await mindarThree.start();
-
-    const video = arContainer?.querySelector('video');
-    if (video) {
-      video.style.zIndex = '1';
-      video.style.objectFit = 'cover';
-      video.style.background = 'transparent';
-    }
 
     const loadModel = () => {
       if (gltf) return;
